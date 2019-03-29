@@ -1,0 +1,97 @@
+<common-header
+      [centerTxt]='"Meu cupom"'
+      [rightFn]="goCenter"
+      [rightTxt]="'Cupão'"
+      [parent]="parent"
+      [hideCommonRight]='true'
+      >
+</common-header>
+
+<ion-content style="background:#ededed;">
+  <div class="myRewardWrap">
+    <ul class="rewardTabs c-flex-row-start">
+      <li [ngClass]="{'active': searchModel.status === 1 , 'c-flex-row-center': true}" (click)="choose(1)">Usar</li>
+      <li [ngClass]="{'active': searchModel.status === 2 , 'c-flex-row-center': true}" (click)="choose(2)">Usado</li>
+      <li [ngClass]="{'active': searchModel.status === 3 , 'c-flex-row-center': true}" (click)="choose(3)">Inválido</li>
+    </ul>
+    <ul [ngClass]="{'rewardList': true, 'useing': searchModel.status === 1, 'used': searchModel.status === 2, 'useTimeout': searchModel.status === 3}">
+
+      <div *ngFor="let item of rewardList">
+
+        <li class="rewardItem" *ngIf="item['couponType'] === 1" (click)="goDetail(item)">
+          <p class="item-l">
+            <span *ngIf="item['conditions'] > 0">{{item.value}} <i>{{dw[item['couponType']]}}</i></span>
+          </p>
+          <p style="position:absolute;">
+            <span *ngIf="item['conditions'] === 0" style="font-size: .566667rem;margin-bottom: .416667rem;">Descuento de {{item.value}}{{dw[item['couponType']]}}</span>
+            <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+            <span>{{item.beginDate}} ~ {{item.endDate}}</span>
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 1">
+            {{ item.isEffective ? "未生效" : "Usar" }}
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 2">
+            Usado
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 3">
+            Inválido
+          </p>
+        </li>
+
+        <li class="rewardItem" *ngIf="item['couponType'] === 2" (click)="goDetail(item)">
+          <p class="item-l">
+            <span>{{item.value}}<i>%</i></span>
+            <!-- <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+            <span>{{item.beginDate}} ~ {{item.endDate}}</span> -->
+          </p>
+          <p class="item-bot">
+            <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+            <span>{{item.beginDate}} ~ {{item.endDate}}</span>
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 1">
+            {{ item.isEffective ? "未生效" : "Usar" }}
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 2">
+            Usado
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 3">
+            Inválido
+          </p>
+        </li>
+
+        <li class="rewardItem" *ngIf="item['couponType'] === 3" (click)="goDetail(item)">
+          <p class="item-l">
+            <span>{{item.value}}<i>Días</i></span>
+            <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+            <span>{{item.beginDate}} ~ {{item.endDate}}</span>
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 1">
+            {{ item.isEffective ? "未生效" : "Usar" }}
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 2">
+            Usado
+          </p>
+          <p class="item-r" *ngIf="searchModel.status == 3">
+            Inválido
+          </p>
+        </li>
+      </div>
+
+      <li class="emptyList" *ngIf="!rewardList['length']">
+        <img src="../../assets/imgs/voucherCenter/empty.png" alt="">
+        <p>Agora sem nenhum cupom</p>
+      </li>
+    </ul>
+
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll
+          (ionInfinite)="doInfinite($event)"
+          *ngIf=" totalPage >= 2 "
+          immediate-check="false">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </div>
+</ion-content>
+

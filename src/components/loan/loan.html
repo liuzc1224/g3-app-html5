@@ -1,0 +1,37 @@
+
+<div class="audit_infoWrap">
+    <div class="audit_wrap">
+        <img src="./assets/imgs/home/loan.png" alt="" class="audit_icon">
+        <div class="audit_text">
+            {{ "loan.wait" | translate }}
+        </div>
+
+        <div class="loan_text_group c-flex-column-center">
+        <span>
+          {{ "loan.top" | translate }},<i (click)="toService()" style="color:#00b4ef;">{{ "loan.bottom" | translate }}</i>
+        </span>
+            <span class="audit_top" style="margin-top: 5px" (click)="toService()">
+          
+        </span>
+        </div>
+
+        <div class="c-color-blue refuse_footer" (click)="goToDetail()">
+            {{ "loan.order" | translate }}
+        </div>
+    </div>
+    <div class="audit_footer" style="margin-top: 2.5rem;">
+        <img src="../../assets/imgs/side/service.png" alt="" class="audit_icon_footer">
+        <div class="audit_textWrap c-flex-column-center">
+      <span style="margin-bottom: 5px;">
+        {{ "audit.notYou" | translate }}
+      </span>
+            <span class="c-text-blue" (click)="transSevice()">
+          {{ "audit.contact" | translate }}
+      </span>
+        </div>
+    </div>
+    <!--<footer-service>-->
+
+    <!--</footer-service>-->
+
+</div>

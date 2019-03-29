@@ -1,0 +1,46 @@
+
+<div class="audit_infoWrap">
+    <div class="audit_wrap">
+        <img src="./assets/imgs/home/refuse.png" alt="" class="audit_icon">
+        <div class="audit_text" style="padding: 0px">
+            {{ "refuse.first" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+            {{ "refuse.sec" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+            {{ "refuse.third" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+            {{ "refuse.fourth" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+            {{ "refuse.fifth" | translate }}
+            <span>
+              {{ orderInfo.expireRejectDays >= 0 ? orderInfo.expireRejectDays : 0 }}
+              <span>
+                  {{ "unit.day" | translate}}
+              </span>
+          </span>
+        </div>
+        <div
+                class="refuse_footer"
+                [ngClass] = '{"refuse_notActive" : orderInfo.expireRejectDays > 0 , "refuse_active" : orderInfo.expireRejectDays <= 0 }'
+                (click)="reApply()"
+        >
+            {{ "refuse.reapply" | translate}}
+        </div>
+    </div>
+
+    <div class="audit_footer">
+        <img src="../../assets/imgs/side/service.png" alt="" class="audit_icon_footer">
+        <div class="audit_textWrap c-flex-column-center">
+      <span style="margin-bottom: 5px;">
+        {{ "audit.notYou" | translate }}
+      </span>
+            <span class="c-text-blue" (click)="transSevice()">
+          {{ "audit.contact" | translate }}
+      </span>
+        </div>
+    </div>
+</div>

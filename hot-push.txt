@@ -1,0 +1,34 @@
+ <plugin name="cordova-hot-code-push-plugin" spec="^1.5.3" />
+    <plugin name="cordova-plugin-facebook4" spec="E:\cordova-plugin-facebook4">
+        <variable name="APP_ID" value="1006704219537904" />
+        <variable name="APP_NAME" value="eLoan" />
+        <variable name="ANDROID_SDK_VERSION" value="4.+" />
+    </plugin>
+    <plugin name="cordova-hot-code-push-plugin" spec="^1.5.3" />
+    <chcp>
+        <config-file url="http://192.168.137.62:8101/chcp.json" />
+        <native-interface version="1" />
+        <auto-download enabled="false" />
+    </chcp>
+
+    "cordova-plugin-facebook4": "file:E:/cordova-plugin-facebook4",
+
+	"cordova-plugin-facebook4": {
+	        "APP_ID": "1006704219537904",
+	        "APP_NAME": "eLoan",
+	        "ANDROID_SDK_VERSION": "4.+"
+	}
+"@ionic-native/facebook": "^4.12.2",  
+
+
+ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="340776473135539" --variable APP_NAME="MyLoan"
+      
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Administrator\Desktop\keystore.jks" | "C:\Users\Administrator\Desktop\openssl-0.9.8k_X64\bin\openssl" sha1 -binary | "C:\Users\Administrator\Desktop\openssl-0.9.8k_X64\bin\openssl" base64
+      login_sucess
+
+
+cordova.plugins.ContactCordovaPlugin.coolMethod("getCallLogSize" , [] , (data)  => {})
+
+cordova.plugins.ContactCordovaPlugin.coolMethod("getSMSSize" , [] , (data)  => {console.log(data)})

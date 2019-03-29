@@ -1,0 +1,63 @@
+
+
+<ion-content style="top:0;">
+    <header class="login_header c-flex-row-center">
+      <div class="c-flex-column-center">
+        <img src="/assets/imgs/logo_icon.png" alt="" class="logoWrap" style="width: 80px; height: 80px;">
+      </div>
+    </header>
+
+    <div class="inputGroup">
+      <form [formGroup]="validForm">
+          <ion-input
+            class="input-item"
+            formControlName = "phoneNumber"
+            [placeholder] = ' "login.placeholder.username" | translate'
+            maxlength="11"
+            (ionFocus) = "makeRecord('phoneNumber')"
+          >
+          </ion-input>
+
+          <ion-input
+            class="input-item"
+            type="password"
+            formControlName = "password"
+            [placeholder] = ' "login.placeholder.password" | translate'
+            (ionFocus)= "makeRecord('password')"
+          >
+          </ion-input>
+
+          <!-- <div id="login_area" (click)="showArea()">
+              {{ areaName }}
+              <ion-icon name="arrow-down" class="login_icon"></ion-icon>
+          </div> -->
+
+          <div class="textExplain" (click)="forgetPass()">
+            {{ "tip.forgotPass" | translate }}
+          </div>
+
+          <button class="c-color-blue button" (click) = 'login($event)' >
+             {{ "login.loginBtn"  | translate}}
+          </button>
+      </form>
+      <div class="regist" (click) = 'regist()'>
+        <span>
+            {{ "login.noAccount" | translate }}
+        </span>
+        <span>
+            {{ "login.regist" | translate }}
+        </span>
+      </div>
+    </div>
+    <!-- 登录引导页面 -->
+    <div class="loginWrap" *ngIf = " loginGuide ">
+        <div class="loginWrapLogo"></div>
+        <div class="loginGuideTxt">
+          {{ "login.loginGuideTxt" | translate }}
+        </div>
+        <div class="btnGroup">
+          <p (click)="hideGuide()">{{ "login.loginBtn" | translate }}</p>
+          <p (click)="regist()">{{ "register.regist" | translate }}</p>
+        </div>
+    </div>
+</ion-content>

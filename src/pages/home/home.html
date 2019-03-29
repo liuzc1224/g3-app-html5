@@ -1,0 +1,125 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                refreshingSpinner="circles"
+                refreshingText="...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <!-- <div style="position: absolute;top:0px;left:0px;z-index: 10000;" (click)="test()">axdasdas</div> -->
+
+    <div style="position: absolute;top:0px;left:0px;width: 100% ; height: 100%;" *ngIf="isFirst">
+        <div class="c-flex-row-space" style="position:absolute;width:100%;z-index:99;">
+            <img class="home_icon" src="./assets/imgs/side_menu.png" alt="" (click) = 'switchMenu()'>
+            <img class="home_icon" src="./assets/imgs/msg.png" alt="" (click) = 'goToMsg()'>
+        </div>
+        <header class="home_header" (click) = 'dowload()'>
+
+        </header>
+
+        <div class="spinner_tip" *ngIf = 'showLoading'>
+        </div>
+        <!-- 申请 -->
+
+        <div *ngIf = 'orderInfo === "default" '>
+            <apply></apply>
+        </div>
+        <!-- 审核中 -->
+        <auditing *ngIf="orderInfo && orderInfo.status == 1"></auditing>
+        <!-- 拒绝 -->
+        <refuse *ngIf="orderInfo && (orderInfo.status == 12 || orderInfo.status == 9)"></refuse>
+        <!-- 放款中 -->
+        <loan *ngIf="orderInfo && orderInfo.status == 3"></loan>
+        <!-- 待还款 -->
+        <repay *ngIf="orderInfo && orderInfo.status == 4 && orderInfo.loanEndDays >= 4 "></repay>
+        <!-- 放款失败 -->
+        <loan-fail *ngIf="orderInfo && orderInfo.status == 13"></loan-fail>
+        <!-- 剩余 -->
+        <rest *ngIf="orderInfo && orderInfo.status == 4 && orderInfo.loanEndDays < 4 && orderInfo.loanEndDays >= 0 "></rest>
+        <!-- 逾期 -->
+        <overdue *ngIf="orderInfo && orderInfo.status == 4 && orderInfo.loanEndDays < 0"></overdue>
+        <!-- 待提现 -->
+        <take-cash *ngIf="orderInfo && orderInfo.status == 2"></take-cash>
+        <!--<take-cash></take-cash>-->
+    </div>
+    <div style="position: absolute;top:0px;left:0px;width: 100% ; height: 100%;" *ngIf="!isFirst">
+        <ion-slides pager>
+            <ion-slide>
+                <img src="./assets/imgs/bootstrap/1.jpg" alt="">
+            </ion-slide>
+
+            <ion-slide>
+                <img src="./assets/imgs/bootstrap/2.jpg" alt="">
+            </ion-slide>
+
+            <ion-slide>
+                <img src="./assets/imgs/bootstrap/3.jpg" alt="">
+            </ion-slide>
+
+            <ion-slide>
+                <img src="./assets/imgs/bootstrap/4.jpg" alt="">
+                <button (click)="enter()" class="enterBtn">
+                    {{ "oper.enter" | translate}}
+                </button>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+
+</ion-content>
+<!-- 更新弹框 -->
+<div class="upadteApp c-flex-row-center" *ngIf="showUpdateApp && !firstShowUpdateApp">
+    <img src="./assets/imgs/close.png" alt="" (click)="closeUpdate()" *ngIf="updateInfo.forceUpdate == false" class="updateApp_close">
+    <div class="updateLine" *ngIf="updateInfo.forceUpdate == false" (click)="closeUpdate()"></div>
+    <div class="upadteApp_content" *ngIf="updateInfo">
+        <img src="./assets/imgs/update.png" alt="" class="c-img-res" >
+        <div class="updateApp_title" >
+            <h4 >
+                Versão mais recente : {{ updateInfo.newVersionName }}
+            </h4>
+        </div>
+        <div class="update_info">
+            <div>
+                <div style="margin-bottom: 5px">
+                    Conteúdo atualizado:
+                </div>
+                <p>
+                    {{ updateInfo.updateLog }}
+                </p>
+            </div>
+        </div>
+        <div id="process" class="progress">
+            <div id="downloadPress" class="progress-bar progress-bar-info progress-bar-striped active">
+            </div>
+            <!--<div>-->
+                <!--{{ downloadPercent }}%-->
+            <!--</div>-->
+        </div>
+        <button class="updateBtn c-flex-row-center" (click)="forceUpdae($event)">
+            Confirmar
+        </button>
+    </div>
+</div>
+<!-- 邀请码弹框 下期加上 -->
+<invate [isShow] = 'showInvate'></invate>
+<!-- 提现首页提醒弹框 -->
+<div class="accountCashPop" *ngIf="showCashPop">
+    <p>
+        {{ "home.cashPop.txt" | translate}}
+    </p>
+    <span class="btn" (click) = "closeCashPop()">{{ "home.cashPop.btn" | translate}}</span>
+</div>
+<div class="accountCashPopMask" *ngIf="showCashPop"></div>
+<!-- 首页定向推送优惠券弹框 -->
+<div class="rewardMask" *ngIf="showRewardPop">
+    <div class="rewardPop" *ngIf="awardPopInfo">
+        <p class="rewardPopTitle">Parabéns por receber um cupom</p>
+        <p class="rewardPopCont">
+            <span><i>{{awardPopInfo['couponValue']}}% </i>{{awardPopInfo['couponContent']}}</span>
+            <span class="dec">{{awardPopInfo['expDescription'] ? awardPopInfo['expDescription'] : "Válido" + awardPopInfo['beginDate'] + "~" + awardPopInfo['endDate ']}}</span>
+        </p>
+        <p class="rewardPopBtn" (click)="closeRewardPop()">
+            Use agora
+        </p>
+    </div>
+</div>

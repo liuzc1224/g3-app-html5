@@ -1,0 +1,102 @@
+
+.home_range{
+    position: relative;
+    margin: 0;
+    padding: 0 .555556rem ;
+    box-sizing: border-box;
+    height: 9.25rem;
+}
+.home_button{
+    width: 8.888889rem ; 
+    height: 1.388889rem ;
+    font-size: .5rem ;
+    color : #fff; 
+    border-radius : 10px;
+}
+
+.home_footer{
+    width: 100% ; 
+    height: 4.638889rem ;
+    background:rgba(245,245,245,1);
+    padding: .555556rem .597222rem .736111rem .597222rem 
+    
+}
+.home_title{
+    font-size: .333333rem ;
+    color:rgba(178,178,178,1);
+    line-height: .375rem ;
+}
+.home_info{
+    text-align: center ;
+    width: 33.333333% ;
+}
+.home_info_top{
+    margin-bottom: 2px;
+}
+.home_info_number{
+    font-size: .555556rem ;
+    position: relative;
+}
+.home_plus::after{
+    content:  "+";
+    display: block ;
+    float: right;
+}
+.home_equal::after{
+    content:  "=";
+    display: block ;
+    float: right;
+}
+.rangeWrap{
+    position: relative;
+    margin-bottom: .819444rem ;
+    padding-bottom: .277778rem ; 
+}
+.text{
+    font-size: .5rem ;
+    color:#00b4ef;
+    font-weight: bold ;
+    margin-top: .402778rem ;
+    margin-bottom: .291667rem ;
+    position: relative;
+}
+
+
+// range start
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100% ;
+    border-radius: 10px;
+    height: .138889rem;
+    background:rgba(235,235,235,1);
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.666667rem ;
+    height: .416667rem ;
+    background: #00b4ef ;
+    border-radius: 10px;
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.13), 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+.home_rangeInput{
+    position: absolute;
+}
+#text_count , 
+#text_day{
+    position: relative ;
+}
+.home_range_text{
+    color : #DEDEDE ; 
+    line-height: .694444rem ;
+    font-size: .333333rem ;
+    margin-top: .277778rem ;
+}
+.home_rateInfo{
+    font-size: .333333rem;
+    color:rgba(174,174,174,1);
+    line-height: .375rem ;
+    margin-top: .555556rem ;
+}
+.home_knows_more{
+    margin-top: .263889rem ;
+}

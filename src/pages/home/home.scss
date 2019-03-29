@@ -1,0 +1,224 @@
+.home_header{
+  width: 100% ;
+  height: 3.194444rem;
+  background : url("../assets/imgs/home_bg.jpg") round ;
+  position: relative;
+}
+.home_header_bar{
+  width: 100% ;
+}
+.home_icon{
+  width: .611111rem ;
+  height: .611111rem ;
+  margin-top: .430556rem ;
+}
+.home_icon:nth-of-type(1){
+  margin-left: .555556rem ;
+}
+.home_icon:nth-of-type(2){
+  margin-right: .555556rem ;
+}
+.home_text_limit{
+  font-size: .444444rem ;
+  line-height: .5rem ;
+  text-align: center ;
+  margin-top: .833333rem ;
+}
+.enterBtn{
+  position: absolute;
+  bottom: 37px;
+  width: 40%;
+  left: 30%;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 0;
+  color: #555;
+}
+
+.upadteApp{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  position: absolute;
+  top: 0px;
+}
+.upadteApp_content{
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.updateApp_title{
+  font-size: 0.4rem;
+  text-indent: .5rem;
+  margin-top: .2rem;
+  font-weight: bolder;
+}
+.update_info{
+  width: 100%;
+  height: calc(50% - 40px);
+  overflow: hidden;
+  padding: .5rem;
+  font-size: 0.4rem;
+}
+.update_info>div{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  color: #999;
+}
+.updateBtn{
+  background: #3cb8fe;
+  color: #fff;
+  font-size: .5rem;
+  height: 12%;
+  border-radius: 0 0 0 10px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.updateApp_close{
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: .6rem;
+  height: .6rem;
+  display: block;
+  z-index: 99;
+}
+.updateLine{
+  display: block;
+  width: 1px;
+  height: 100px;
+  background: #d4d4d4;
+  position: absolute;
+  top: 8.2%;
+  right: 18%;
+}
+
+#process{
+  height: 27px;
+  margin: 0px 5px;
+  width: calc(100% - 10px);
+  color:#000;
+  font-size: 12px;
+  line-height: 27px;
+  text-align: center;
+  display: none;
+  position: relative;
+}
+#process>div:nth-of-type(2){
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  line-height: 27px ;
+}
+
+
+.accountCashPopMask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($color: #000, $alpha: 0.5);
+  z-index: 9;
+}
+.accountCashPop{
+    width: 8.055556rem;
+    height: 9.666667rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    background: #fff;
+    border-radius: .277778rem;
+    font-size: .416667rem;
+    padding: 1.2rem .416667rem 0;
+    >p{
+      line-height: .6rem;
+    }
+    .btn{
+      position: absolute;
+      width: 7.166667rem;
+      height: 1.25rem;
+      background: #00B4EF;
+      bottom: 1.111111rem;
+      border-radius: .177778rem;
+      line-height: 1.25rem;
+      text-align: center;
+      color: #fff;
+    }
+}
+.rewardMask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba($color: #000, $alpha: 0.5);
+  z-index: 9;
+  .rewardPop{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 8.333333rem;
+    height: 7.25rem;
+    border-radius:.277778rem;
+    background: #fff;
+  }
+  .rewardPopTitle{
+    font-size: .492222rem;
+    color:rgba(88,88,88,1);
+    line-height:.611111rem;
+    padding: .680556rem 1.336111rem 0;
+    text-align: center;
+  }
+  .rewardPopCont{
+    width: 100%;
+    height: 3.652778rem;
+    background: url("../../assets/imgs/voucherCenter/homeReward.png") no-repeat center;
+    background-size: contain;
+    padding-top: 1.361111rem;
+    overflow: hidden;
+    >span{
+      font-size: .444444rem;
+      color: #1BAEFF;
+      padding-left: 1.263889rem;
+      display: block;
+      i{
+        font-size: .833333rem;
+      }
+    }
+    .dec{
+      font-size: .361111rem;
+      line-height: .361111rem;
+      color: #A2A2A2;
+      margin-top: .388889rem;
+    }
+  }
+  .rewardPopBtn{
+    width: 6.666667rem;
+    height: .972222rem;
+    background: #1BAEFF;
+    border-radius: .486111rem;
+    margin: 0 auto;
+    font-size: .444444rem;
+    line-height: .972222rem;
+    text-align: center;
+    color: #fff;
+  }
+}

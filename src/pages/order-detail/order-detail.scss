@@ -1,0 +1,32 @@
+page-order-detail {
+
+}
+.orderDetail_wrap{
+  margin: .277778rem ;
+  background: #fff ;
+  padding-top: .402778rem ;
+  border-radius: .277778rem ;
+}
+
+.orderDetail_section{
+  margin-bottom: .513889rem ;
+  color:rgba(170,170,170,1);
+  font-size: .388889rem ;
+  padding: 0 .402778rem ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderDetail_payInfo{
+  margin-top: .5rem;
+  position: relative;
+  padding-bottom: .1rem;
+}
+.orderDetail_payInfo::before{
+  content: '';
+  display: block;
+  border-top: 1px solid rgba(170, 170, 170, 0.29);
+  margin: 0 .402778rem .5rem .402778rem;
+}

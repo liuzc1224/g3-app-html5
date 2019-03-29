@@ -1,0 +1,206 @@
+<div class="home_range ">
+    <div class="rangeWrap">
+      <div class="c-text-blue home_text_limit">
+        {{ "home.choseLimitMount" | translate }}
+      </div>
+      <div class="text text_count">
+        <span id="text_count" style="left:0px">
+            <span>
+                {{ "unit.currency" | translate }}
+              </span>
+            {{ limitMount }}
+        </span>
+      </div>
+      <input
+              step="1"
+              [max]="range.mount.max"
+              [min]="range.mount.min"
+              type="range" value="500"
+              class="home_rangeInput"
+              (input) = 'rangeChange($event , "mount")'
+              (touchstart) = 'makeRecord("moneyClickStart")'
+              (touchend) = 'makeRecord("moneyClickEnd")'
+      >
+
+      <div class="c-flex-row-space">  
+        <div class="home_range_text">
+          <span>
+            {{ "unit.currency" | translate }}
+          </span>
+          {{ range.mount.min }}
+        </div>
+
+        <div class="home_range_text">
+          <span>
+            <span>
+              {{ "unit.currency" | translate }}
+            </span>
+            {{ range.mount.max }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rangeWrap">
+      <div class="c-text-blue home_text_limit">
+        {{ "home.choseLimitDay" | translate }}
+      </div>
+      <div class="text">
+        <span id="text_day">
+            {{ limitDay }}
+            <span>
+                {{ "unit.day" | translate }}
+            </span>
+        </span>
+      </div>
+      <input
+              [max]="range.day.max"
+              [min]="range.day.min"
+              type="range"
+              value="0"
+              class="home_rangeInput"
+              (input) = 'rangeChange($event , "day")'
+              (touchstart) = 'makeRecord("dateClickStart")'
+              (touchend) = 'makeRecord("dateClickEnd")'
+      >
+      <div class="c-flex-row-space">  
+        <div class="home_range_text">
+          <!-- <span>
+            {{ "unit.day" | translate }}
+          </span> -->
+          7dias
+        </div>
+
+        <div class="home_range_text">
+          <span>
+            <!-- <span>
+              {{ "unit.day" | translate }}
+            </span> -->
+            14dias
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- <ion-range min="20" max="80" step="2">
+        <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+        <ion-icon slot="end" name="sunny"></ion-icon>
+      </ion-range> -->
+
+      <div class="c-flex-row-center">
+        <button class="c-color-blue home_button" (click) = 'makeLoan($event)' >
+          {{ "home.button"  | translate}}
+        </button>
+      </div>
+
+  </div>
+
+  <footer class="home_footer" style="height: 100%">
+
+    <div class="home_title c-flex-row-center">
+
+      <div class="home_info">
+
+        <div class="home_info_top">
+            {{ "home.mount.top"  | translate}}
+        </div>
+
+        <div class="home_info_bottom">
+            {{ "home.mount.bottom"  | translate}}
+        </div>
+
+      </div>
+
+      <div class="home_info">
+
+        <div class="home_info_top">
+            {{ "home.rate.top"  | translate}}
+          
+        </div>
+
+        <div class="bottom">
+          {{ "home.rate.bottom"  | translate}}
+        </div>
+
+      </div>
+
+      <div class="home_info">
+
+        <div class="home_info_top">
+            {{ "home.repay.top"  | translate}}
+
+        </div>
+
+        <div class="bottom">
+            {{ "home.repay.bottom"  | translate}}
+        </div>
+
+      </div>
+      
+    </div>
+
+    <div class="home_title c-flex-row-center" style="margin-top: .277778rem">
+
+        <div class="home_info">
+  
+          <div class="home_info_number home_plus">
+              {{ limitMount }},00
+          </div>
+        </div>
+  
+        <div class="home_info">
+  
+          <div class="home_info_number home_equal">
+              {{ rate }},00
+          </div>
+        </div>
+  
+        <div class="home_info">
+  
+          <div class="home_info_number "> 
+              {{ limitMount +  rate }},00
+          </div>
+
+        </div>
+        
+      </div>
+
+      <div class="home_rateInfo">
+        <div>
+          <span>
+              {{ "home.footer.rateDay" | translate }}
+              <span>
+                {{ rateDay }} ao dia
+              </span>
+          </span>
+
+          <span>
+               , {{ "home.footer.rateYear" | translate }}
+              <span>
+                {{ rateYear }} ao ano,
+              </span>
+          </span>
+        </div>
+
+        <div>
+          <span>
+              {{ "home.footer.repayDate" | translate }}
+              <span>
+                {{ repayDate | DatePipe }}
+              </span>
+              <span>
+                  , Valor a ser pago não inclui IOF
+              </span>
+          </span>
+        </div>
+
+        <div class="home_knows_more">
+            {{ "home.footer.kownsMore" | translate }} ,
+            <span class="c-text-blue" (click)="transSevice()">
+                {{ "home.footer.contact" | translate }}
+            </span>
+        </div>
+
+      </div>
+  </footer>

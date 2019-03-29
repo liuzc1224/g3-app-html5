@@ -1,0 +1,81 @@
+<ion-header>
+    <div class="c-header">
+        <i class="c-back-arrow" (click) = 'back()'></i>
+        {{ "config.oper.userPass" | translate }}
+    </div>
+</ion-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)" class="setuserpass">
+    <div class="formWrap">
+        <form [formGroup]="validForm">
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_right regist_border">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "oldPassword"
+                            [placeholder] = ' "forget.userPass.raw" | translate'
+                            (focus)="makeRecord('oldPassword')"
+                            type="password"
+                    >
+                    </ion-input>
+                </div>
+            </div>
+
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_right regist_border">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "password"
+                            [placeholder] = ' "forget.userPass.now" | translate'
+                            (focus)="makeRecord('firstPassword')"
+                            type="password"
+                    >
+                    </ion-input>
+                </div>
+            </div>
+
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_right">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "passwordAgain"
+                            [placeholder] = ' "forget.userPass.again" | translate'
+                            (focus)="makeRecord('secondPassword')"
+                            type="password"
+                    >
+                    </ion-input>
+                    <!--<img src="../../assets/imgs/regist/cross.png" class="regist_cross" alt="">-->
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="regist_wrap">
+        <!--<div class="regist_access c-flex-row-start">-->
+            <!--<div class="regist_access_left">-->
+                <!--<div-->
+                        <!--class='regist_checkbox'-->
+                        <!--[ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }'-->
+                        <!--(click) = 'access() '-->
+                <!--&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="regist_access_right">-->
+                <!--{{ "register.access" | translate}}-->
+            <!--</div>-->
+        <!--</div>-->
+        <button
+                class="c-color-blue button"
+                (click) = 'changePass($event)'
+                style="margin-top:.694444rem"
+                [disabled]="!validForm.valid || validForm.value.password != validForm.value.passwordAgain"
+        >
+            {{ "side.menu.config"  | translate}}
+        </button>
+
+        <div class="regist" (click) = 'forget()'>
+            <span class="c-text-blue">
+              esquecer senha？
+            </span>
+        </div>
+    </div>
+</ion-content>

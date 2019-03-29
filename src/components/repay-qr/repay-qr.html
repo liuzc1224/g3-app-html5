@@ -1,0 +1,109 @@
+<ion-header>
+    <div class="c-header">
+        <i class="c-back-arrow" (click) = 'back()'></i>
+        {{"confirm.title" | translate}}
+    </div>
+</ion-header>
+<ion-content style="background: rgb(245 , 245 ,245) ;">
+    <div *ngIf="type==1" class="repay-qr-repayBox" [ngClass]="{'allRepay':allRepay==true,'overDue':allRepay==false&&item.status==5}">
+        <div class="repay-title">
+            <span class="repay-titleTxt">Pagar com antecedência</span>
+            <span class="repay-period">{{item.currentPeriod}}ª parcela</span>
+            <span class="repay-date">Data de vencimento {{item.planRepaymentDateStr}}</span>
+        </div>
+        <p class="money-number-box"><span class="money-number">{{item.currentRepay}}</span><span class="overdueflag">Vencido</span></p>
+        <div class="repay-footer" *ngIf="allRepay==true">Incluindo {{item.totalFinancingMoney}} de valor financiado e {{item.charge}} de juros</div>
+        <div class="repay-footer" *ngIf="allRepay==false&&(item.status==1||item.status==3)">Incluindo {{item.financingMoney}} de valor financiado e {{item.interest}} de juros</div>
+        <div class="repay-footer" *ngIf="allRepay==false&&item.status==5">incluindo {{item.financingMoney}} de valor financiado, {{item.interest}} de juros e{{item.overDueRateMoney}} de despesas de atraso </div>  
+    </div>
+    <div class="spinner_tip" [hidden]='resMark'>
+
+    </div>
+
+    <div [hidden]='!resMark'>
+
+        <div class="repayQr_wrap">
+            <div class="repayQr_section">
+        <span>
+            {{ "repayQr.qrTitle" | translate }}
+        </span>
+            </div>
+
+            <div class="repayQr_Block">
+                <!--<canvas id="repayQr_qr" ></canvas>-->
+                <img class="repayQr_qr" id="repayQr_qr" (click) = 'showModal()' />
+                <div class="repayQr_magnify">
+                    {{ "repayQr.magnify" | translate }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="repayQr_account repayQr_section">-->
+    <!--<span>-->
+    <!--{{ "repayQr.acountTitle" | translate }}-->
+    <!--</span>-->
+    <!--<div class="repayQr_accountWrap c-flex-row-start">-->
+    <!--<div class="accountWrap-left">-->
+    <!--<div>asdasdasd</div>-->
+    <!--<div>asdasdasd</div>-->
+    <!--</div>-->
+    <!--<div class="accountWrap-right c-flex-row-center c-text-blue" (click) = 'clipText()'>-->
+    <!--{{ "operate.copy" | translate }}-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="border-box">
+        <div class="border-btn copy" (click)='copyBoleto()'>
+            <span class="btn-left">{{ "repayQr.copyTitle" | translate }}</span>
+            <span class="btn-right">{{ "repayQr.copyBtn" | translate }}</span>
+        </div>
+        <div class="border-btn send-email" (click)='sendEmail()'>
+            <span class="btn-left">{{ "repayQr.sendEmailTitle" | translate }}</span>
+            <span class="btn-right">{{ "repayQr.sendEmailBtn" | translate }}</span>
+        </div>
+        <div class="footer">{{ "repayQr.tips" | translate }}</div>
+    </div>
+    <!-- 剪切成功 -->
+    <div class="copy-wrapper" [hidden]='!isSuccess'>
+        <div class="copy-success-box">
+            <div class="img-box">
+                <img src="../../assets/imgs/copy_success.png" alt="">
+            </div>
+            <span class="copy-success-txt">{{ "repayQr.copySuccessTxt" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- 发送成功 -->
+    <div class="copy-wrapper" [hidden]='!isSendSuccess'>
+        <div class="copy-success-box">
+            <div class="img-box">
+                <img src="../../assets/imgs/copy_success.png" alt="">
+            </div>
+            <span class="copy-success-txt">{{ "repayQr.sendEmailSuccess" | translate }}</span>
+        </div>
+    </div>
+
+    <!-- 发送失败 -->
+    <!-- <div class="copy-wrapper" [hidden]='!isSendFail'>
+        <div class="copy-success-box">
+            <div class="img-box">
+                <img src="../../assets/imgs/copy_fail.png" alt="">
+            </div>
+            <span class="copy-success-txt">Sucesso de enviar</span>
+        </div>
+    </div> -->
+    <!-- 发送邮箱 -->
+    <div class="copy-wrapper" [hidden]='!isSendEmail'>
+        <div class="email-send-box">
+            <h2 class="email-send-title">{{ "repayQr.emailTitle" | translate }}</h2>
+            <label class="input-label">{{ "repayQr.emailInput" | translate }}</label>
+            <input class="email-input" type="email" [(ngModel)]="email">
+            <div class="send-btn" (click)="emailSubmit()">{{ "repayQr.confirm" | translate }}</div>
+            <div class="cancel-btn" (click)="cancelEmailSend()">{{ "repayQr.Cancelar" | translate }}</div>
+        </div>
+    </div>
+</ion-content>
+
+<div class="repayQr_modal c-flex-row-center" (click) = 'hideModal()'>
+    <div id="repayQr_img"></div>
+</div>

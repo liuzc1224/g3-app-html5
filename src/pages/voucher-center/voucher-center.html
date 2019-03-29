@@ -1,0 +1,43 @@
+<common-header [centerTxt]='"Noticias"'></common-header>
+
+<ion-content  style="background:#ededed;">
+  <ul class="voucherWrap">
+    <li *ngFor="let item of list" [ngClass]="{'active': item.receiveOrNot}">
+      <div class="voucherCont">
+        <p class="item-l">
+          <span>{{item.couponName}}</span>
+        </p>
+        <p class="item-r">
+          Cupom de <br> redução de juros
+        </p>
+        <p class="item-bot">
+          <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+          <!-- 领取后x天有效 expDayString -->
+          <span *ngIf="item.expDays">{{item.expDayString}}</span>
+          <!-- 有效期区间 start ～ end -->
+          <span *ngIf="!item.expDays">{{item.beginDate}} ~ {{item.endDate}}</span>
+        </p>
+      </div>
+      <p class="voucherBtn" (click)="postCenterReward(item)">{{item.receiveOrNot ? 'Pegar agora' : 'Pegar agora'}}</p>
+      <!-- couponStatus 1未开始 2进行中 3已过期 4.已暂停 -->
+      <p class="voucherTag" [ngClass]="{'finnshTag': item.isOver == 1, 'timeOutTag': item.couponStatus == 3}"></p>
+    </li>
+  </ul>
+  <div class="emptyList" *ngIf="!list['length']">
+    <img src="../assets/imgs/voucherCenter/empty.png" alt="">
+    <p>Agora sem nenhum cupom</p>
+  </div>
+  <!--下滑的时候，加载数据-->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf=" totalPage >= 2 ">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<div class="voucherMask" *ngIf="showPop"></div>
+<div class="voucherPop" *ngIf="showPop">
+  <img *ngIf="succIcon" class="succimg" src="../assets//imgs/voucherCenter/succ.png" alt="">
+  <p *ngIf="succIcon">Sucesso</p>
+  <img *ngIf="!succIcon" class="failimg" src="../assets//imgs/voucherCenter/fail.png" alt="">
+  <p *ngIf="!succIcon">Falha</p>
+</div>
+

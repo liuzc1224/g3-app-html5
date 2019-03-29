@@ -1,0 +1,132 @@
+.voucherWrap{
+    padding: .138889rem;
+    overflow: hidden;
+    li{
+        width: 9.166667rem;
+        height: 4.291667rem;
+        background: url(../assets/imgs/voucherCenter/quan.png) no-repeat center;
+        background-size: contain;
+        margin: .416667rem auto 0;
+        position: relative;
+        .voucherCont{
+            width: 9.166667rem;
+            height: 3.069444rem;
+            margin: .416667rem auto 0;
+            padding: .208333rem .208333rem 0 .416667rem;
+            color: #fff;
+            display: flex;
+
+            .item-l{
+                flex: 1;
+                span{
+                    display: block;
+                    font-size: .333333rem;
+                }
+                span:nth-child(1){
+                    font-size: .416667rem;
+                    margin-top: .402778rem;
+                    font-weight: 900;
+                    // font-weight: bolder;
+                    width: 4.166667rem;
+                    line-height: .458333rem;
+                    i{
+                        font-size: .666667rem;
+                    }
+                }
+                span:nth-child(2){
+                    line-height: .444444rem;
+                    margin-bottom: .138889rem;
+                }
+                span:nth-child(3){
+                    font-size: .222222rem;
+                    margin-bottom: .138889rem;
+                }
+            }
+            .item-r{
+                width: 2.969444rem;
+                text-align: right;
+                font-size: .327778rem;
+                margin-top: .238889rem;
+                line-height: .472222rem;
+            }
+            .item-bot{
+                position: absolute;
+                top: 1.455556rem;
+                span{
+                    font-size: .333333rem;
+                    display: block;
+                    line-height: .488889rem;
+                }
+            }
+        }
+        .voucherBtn{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.22rem;
+            line-height: 1.22rem;
+            text-align: center;
+            color: #00B4EF;
+            font-size: .416667rem;
+        }
+        .voucherTag{
+            position: absolute;
+            width: 2.027778rem;
+            height: 2.027778rem;
+            right: .388889rem;
+            bottom: .388889rem;
+            &.finnshTag{
+                background: url(../assets/imgs/voucherCenter/tagFinnsh.png) no-repeat center;
+                background-size: contain;
+            }
+            &.timeOutTag{
+                background: url(../assets/imgs/voucherCenter/tag.png) no-repeat center;
+                background-size: contain;
+            }
+
+        }
+        &.active{
+            background: url(../assets/imgs/voucherCenter/quan_active.png) no-repeat center;
+            background-size: contain;
+            .voucherBtn{
+                color: #3573FA;
+            }
+        }
+
+    }
+}
+.voucherMask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(000, 000, 000, 0.4);
+    z-index: 99;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+.voucherPop{
+    position: fixed;
+    width:3.888889rem;
+    height:4.722222rem;
+    background:rgba(255,255,255,1);
+    border-radius:.138889rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    padding-top: .972222rem;
+    text-align: center;
+    img{
+        width: 1.666667rem;
+        height: auto;
+    }
+    p{
+        color: #FF7061;
+        font-size: .416667rem;
+        margin-top: .902778rem;
+    }
+}

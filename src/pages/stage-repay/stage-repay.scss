@@ -1,0 +1,172 @@
+page-stage-repay {
+
+}
+.stage_repay {
+  .stage_header {
+    height: 0.833333rem;
+    background: #00b4ef;
+    opacity: 0.4;
+    align-items: center;
+    font-size: 0.333333rem;
+    font-family: HKGrotesk-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    .header_orderNo {
+      display: block;
+      padding-left: 0.555556rem;
+    }
+    .loan_date {
+      display: block;
+      padding-right: 0.555556rem;
+    }
+  }
+  .majorInfo {
+    background-color: #00b4ef;
+    display: block;
+    color: rgba(255, 255, 255, 1);
+    margin: 0 auto;
+    padding: 0 0.555556rem;
+    overflow: hidden;
+    .majorInfo-title {
+      font-size: 0.416667rem;
+      display: block;
+      text-align: center;
+      padding: 0.527778rem 0 0.486111rem;
+      overflow: hidden;
+    }
+    .majorInfo-money {
+      font-size: 0.833333rem;
+      display: block;
+      text-align: center;
+      padding: 0 0 0.486111rem;
+    }
+    .majorInfo-content {
+      padding: 0 0 0.625rem;
+      overflow: hidden;
+      .majorInfo-content-left {
+        font-size: 0.333333rem;
+        float: left;
+        max-width: 50%;
+      }
+      .majorInfo-content-right {
+        font-size: 0.305556rem;
+        float: right;
+        max-width: 50%;
+      }
+    }
+    .repay-btn {
+      font-size: 0.5rem;
+      width: 8.888889rem;
+      height: 1.111111rem;
+      background: rgba(114, 233, 226, 1);
+      border-radius: 0.555556rem;
+      margin: 0 0 0.555556rem;
+      line-height: 1.111111rem;
+      text-align: center;
+    }
+  }
+  .majorInfo.closed{
+    color:#fff;
+    font-size:.361111rem;
+    text-align: center;
+    height:3.333333rem;
+    line-height:3.333333rem;
+  }
+  .stageList {
+    margin: 0 auto;
+    .stage-box {
+      width: 100%;
+      max-width: 10rem;
+      background: rgba(255, 255, 255, 1);
+      margin: 0 0 0.333333rem;
+      padding: 0 0 0 0.527778rem;
+      border-radius: 0.138889rem;
+      .stage-box-header {
+        border-bottom: 0.013889rem solid rgba(204, 204, 204, 1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.416667rem;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+        height: 1.305556rem;
+        line-height: 1.305556rem;
+        .box-date {
+          padding: 0 0.527778rem 0 0;
+        }
+      }
+      .stage-box-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 0.541667rem;
+        .stage-content-txt {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .content-money {
+            font-size: 0.555556rem;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            padding: 0.527778rem 0 0.347222rem 0;
+            display: flex;
+            align-content: center;
+            .flag-overdue {
+              border: 0.013889rem solid rgba(255, 132, 103, 1);
+              border-radius: 0.25rem;
+              font-size: 0.361111rem;
+              font-weight: 500;
+              color: rgba(255, 132, 103, 1);
+              padding: 0.111111rem 0.180556rem;
+              margin: 0 0 0 0.416667rem;
+              text-align: center;
+              display: none;
+            }
+          }
+          .content-tips {
+            font-size: 0.333333rem;
+            font-weight: 500;
+            color: rgba(123, 123, 123, 1);
+            max-width: 6.111111rem;
+          }
+        }
+        .stage-repay-btn {
+          width: 2.5rem;
+          height: 0.833333rem;
+          display: block;
+          background: rgba(0, 180, 239, 1);
+          border-radius: 0.416667rem;
+          margin: 1.166667rem 0.527778rem 0 0;
+          font-size: 0.333333rem;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 1);
+          line-height: 0.833333rem;
+          text-align: center;
+        }
+      }
+    }
+    .stage-box.settle {
+      background: rgba(226, 226, 226, 1);
+      .stage-repay-btn {
+        color: rgba(170, 170, 170, 1);
+        background: rgba(226, 226, 226, 1);
+      }
+    }
+    .stage-box.dateNoArrive {
+      .stage-repay-btn {
+        color: rgba(170, 170, 170, 1);
+        background: rgba(229, 229, 229, 1);
+      }
+    }
+    .stage-box.overdue {
+      .flag-overdue {
+        display: block !important;
+      }
+      .stage-repay-btn {
+        background: rgba(255, 132, 103, 1);
+      }
+    }
+  }
+}

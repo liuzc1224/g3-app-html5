@@ -1,0 +1,21 @@
+<div class="container">
+    <ion-header (click)='hide()'>
+      <div class="c-header-wrap c-background c-flex-row-start">
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back" class="c-icon-back"></ion-icon>
+        <div>
+          {{ "common.tips.chose" | translate }}
+        </div>
+      </div>
+    </ion-header>
+
+    <ion-content>
+      <div class="listContainer">
+        <ul class="listWrap">
+          <li *ngFor = 'let item of paras;let i = index' (click) = 'fire(item,i)'>
+            <i class="icon-bank" *ngIf = " item.icon "><img [src]=" item.icon" ></i>
+            {{ item.name }}{{ item.phone ? item.phone : '' }}
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+</div>

@@ -1,0 +1,7 @@
+<!-- Generated template for the ExpanBoxComponent component -->
+<div class="expan-wrap" #divWrap>
+  <p class="title-txt" (click)="showTxt($event)">{{headerTxt}}</p>
+  <div #divInner class="expan-inner" style="overflow: hidden;" [ngClass] = '{active : expanStatus}' >
+    <p *ngFor='let item of innerTxt'>{{item}}</p>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="pad-mask"></div>
+<div class="pad-content">
+    <ion-icon ios="ios-close" md="md-close" class="closeIco" (click) = 'close()'></ion-icon>
+    <div class="pad-header">
+        {{ title }}
+    </div>
+
+    <div class="pad-passwordWap">
+        <ul class="c-flex-row-center">
+            <li class="borderLeft borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[0] != null'></span>
+            </li>
+            <li class="borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[1] != null'></span>
+            </li>
+            <li class="borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[2] != null'></span>
+            </li>
+            <li class="borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[3] != null'></span>
+            </li>
+            <li class="borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[4] != null'></span>
+            </li>
+            <li class="borderRight c-flex-row-center">
+                <span class="circle" *ngIf = 'passArr[5] != null'></span>
+            </li>
+        </ul>
+    </div>
+
+    <!--<div class="forget-pass">-->
+        <!--{{ "forget.payPass.forget" | translate }} ?-->
+    <!--</div>-->
+    <div class="forget" (click) = 'forget()'>
+        {{ "forget.payPass.forget" | translate }}
+    </div>
+
+    <div class="pad-number">
+        <ul class="numberList">
+            <li class="c-flex-row-start">
+                <button (click) = 'inputNum(1)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    1
+                </button>
+                <button (click) = 'inputNum(2)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    2
+                </button>
+                <button (click) = 'inputNum(3)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    3
+                </button>
+            </li>
+
+            <li class="c-flex-row-start">
+                <button (click) = 'inputNum(4)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    4
+                </button>
+                <button (click) = 'inputNum(5)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    5
+                </button>
+                <button (click) = 'inputNum(6)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    6
+                </button>
+            </li>
+
+            <li class="c-flex-row-start">
+                <button (click) = 'inputNum(7)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    7
+                </button>
+                <button (click) = 'inputNum(8)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    8
+                </button>
+                <button (click) = 'inputNum(9)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    9
+                </button>
+            </li>
+
+            <li class="c-flex-row-start">
+                <button ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+
+                </button>
+                <button  (click) = 'inputNum(0)' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    0
+                </button>
+                <button (click) = 'deleteNum()' ion-button color="light" style="border-right: solid 1px #d3d3d3 !important;border-bottom: solid 1px #d3d3d3 !important">
+                    <ion-icon style="line-height: 1.666667rem !important;" name="ios-backspace-outline" class="backBtn"></ion-icon>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

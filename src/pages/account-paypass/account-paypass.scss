@@ -1,0 +1,53 @@
+page-account-paypass {
+
+}
+.account_setpass{
+    margin-top: .555556rem ;
+    padding:  0 .555556rem ;
+    font-size: .388889rem;
+    color:rgba(51,51,51,1);
+    text-align: center
+}
+.account_passWrap{
+    margin: 0 .555556rem ;
+    margin-top: .402778rem ;
+    height: 1.388889rem ;
+    border: 1px solid #ccc ;
+    border-radius: .138889rem ;
+    position: relative;
+}
+
+.account_passWrap>div{
+    width:100% ; 
+    height:100% ;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+.account_passWrap>div>span{
+    display: block ; 
+    width: 16.666666% ;
+    text-align: center ; 
+    line-height:  1.388889rem ;
+    height:  1.388889rem ;
+    font-size : .652778rem
+}
+.account_borderRight{
+    border-right: 1px solid #ccc ;
+}
+.account_input{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100% ; 
+    height: 100% ;
+    z-index: 2 ; 
+    opacity: 0 ;
+}
+.account_tip{
+    font-size: .333333rem;
+    color:rgba(190,190,190,1);
+    padding: 0 .972222rem ;
+    margin-top: .416667rem;
+}
+

@@ -1,0 +1,52 @@
+
+<common-header [centerTxt]=' "confirm.title" | translate '></common-header>
+<ion-content style="background:#F5F5F5;padding:0 0 .347222rem">
+  <div class="stage_repay">
+    <div class="stage_header" (click)="goOrderDetail()">
+      <span class="header_orderNo">{{orderNo}}</span>
+      <p class="loan_date">
+        <span>Data de empréstimo</span>
+        <span>{{detailInfo && detailInfo.loanDateStr}}</span>
+        <i>></i>
+      </p>
+    </div>
+    <div class="majorInfo" *ngIf="!isClosed">
+      <span class="majorInfo-title">Valor restante a pagar</span>
+      <span class="majorInfo-money">{{detailInfo && detailInfo.currentRepay}}</span>
+      <p class="majorInfo-content">
+          <span class="majorInfo-content-left">Valor total a pagar {{detailInfo && detailInfo.stagesTotalAmount}}</span>
+          <span class="majorInfo-content-right">(incluindo {{detailInfo && detailInfo.charge}} de despesas)</span>
+      </p>
+      <div class="repay-btn" (click)="goRepayAll()">Pagar com antecedência</div>
+    </div>
+    <div class="majorInfo closed" *ngIf="isClosed">
+      Ordem Quitado
+    </div>
+    <div class="stageList">
+      <div class="stage-box" 
+      *ngFor="let item of repayList"
+      [ngClass]="{'settle':(item.status==4||item.status==6),'dateNoArrive':item.status==8,'overdue':item.status==5}"
+      (click)="(item.status == 4||item.status == 6) && goStageOrderDetail(item.id)"
+      >
+        <div class="stage-box-header">
+          <span>{{item.currentPeriod}}/{{item.totalPeriod}} parcelas</span>
+          <span class="box-date">Vencimento  {{item.planRepaymentDateStr}} </span>
+        </div>
+        <div class="stage-box-content">
+          <p class="stage-content-txt">
+            <span class="content-money">{{item.currentRepay}}<i class="flag-overdue">Vencido</i></span>
+            <span class="content-tips" *ngIf="item.status!==5">incluindo {{item.financingMoney}} de valor financiado 
+                e {{item.interest}} de juros</span> 
+            <span class="content-tips" *ngIf="item.status==5">
+                incluindo {{item.financingMoney}} de valor financiado,{{item.interest}}
+                de juros e{{item.overDueRateMoney}} de despesas de atraso 
+            </span>
+          </p>
+          <span class="stage-repay-btn" *ngIf="item.status==1||item.status==3||item.status==5" (click)="goRepay(item)">Vai pagar</span>
+          <span class="stage-repay-btn" *ngIf="item.status==8">Vai pagar</span>
+          <span class="stage-repay-btn" *ngIf="item.status==4||item.status==6">Já quitou</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

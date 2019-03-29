@@ -1,0 +1,36 @@
+<common-header [centerTxt]="'feedback.title' | translate" xmlns="http://www.w3.org/1999/html"></common-header>
+
+<ion-content style="background: #EEEEEE">
+  <div style="width: 100%;clear: both;float: left;">
+    <div class="prompt">
+      <ion-icon name="notifications"></ion-icon>
+      {{'feedback.prompt' | translate}}
+    </div>
+    <div class="lable1">
+      {{'feedback.lable1' | translate}}
+    </div>
+    <ion-textarea [(ngModel)]="inputValue" [placeholder]="'feedback.input' | translate" maxlength="500"></ion-textarea>
+    <div class="lable2">
+      {{'feedback.lable2' | translate}}
+      <br />{{'feedback.lable' | translate}}
+    </div>
+    <div style="width: 100%;background-color: white;float: left;">
+      <div *ngIf="imgData.length >0">
+        <div class="center" *ngFor="let img of imgData">
+          <div class="img">
+            <ion-icon name="close-circle-outline" (click)="imgClick(img)"></ion-icon>
+            <img [src]="img ? img : qq" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="center" *ngIf="imgData.length < 6">
+        <div class="add" (click)="add()">
+          <ion-icon name="add-circle-outline"></ion-icon><br />
+          {{'feedback.add' | translate}}
+        </div>
+      </div>
+    </div>
+
+    <button [disabled]="!inputValue" (click)="sub()">{{ 'feedback.button' | translate }}</button>
+  </div>
+</ion-content>

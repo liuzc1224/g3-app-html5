@@ -1,0 +1,61 @@
+<common-header
+    [centerTxt]='"review.steps.first" | translate'
+    [leftFn]='back'
+    [parent]='parent'
+    ></common-header>
+<ion-content>
+    <div class="process-bar-wrap c-flex-row-center c-background">
+        <ul class="process-list c-flex-row-space">
+            <li class="lineAfter activeAfter" (click)='makeRecord("step")'>
+                <div class="step-text">
+                    1
+                </div>
+            </li>
+            <li class="lineAfter lineBefore" >
+                <div class="step-text">
+                    2
+                </div>
+            </li>
+            <li class="lineAfter lineBefore">
+                <div class="step-text">
+                    3
+                </div>
+            </li>
+            <li class="lineAfter lineBefore" >
+                <div class="step-text">
+                    4
+                </div>
+            </li>
+            <li class="lineBefore lineAfter" >
+                <div class="step-text">
+                    5
+                </div>
+            </li>
+            <li class="lineBefore">
+                <div class="step-text">
+                    6
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="spinner_tip" *ngIf = 'showLoading'>
+    </div>
+
+    <div class="purpose_list_wrap">
+        <div
+                class="purpose_list_item"
+                *ngFor = 'let item of enum_purpose'
+                (click) = 'selectItem(item)'
+                [ngClass] = "{'activeItem' : select.id === item.id }"
+        >
+            {{ item.description }}
+        </div>
+
+        <div class="preview_btnWrap" *ngIf = 'enum_purpose'>
+            <button class="c-color-blue button" (click) = 'nextBtn($event)'>
+                {{ "oper.next"  | translate}}
+            </button>
+        </div>
+    </div>
+</ion-content>

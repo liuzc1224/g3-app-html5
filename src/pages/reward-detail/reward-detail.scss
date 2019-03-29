@@ -1,0 +1,41 @@
+.rewardDetailWrap{
+    width: 100%;
+    height: 4.305556rem;
+    background: #fff;
+    padding-left: .416667rem;
+    overflow: hidden;
+    color: #066666;
+    .rewardDetaiTitle{
+        height: 1.138889rem;
+        line-height: 1.138889rem;
+        border-bottom: 1px solid #BEBEBE;
+        font-size: .416667rem;
+    }
+    .detailBox{
+        padding: .416667rem .416667rem 0 0;
+    }
+    .rewardDetaiL{
+        flex: 1;
+        p{
+            font-weight: 900;
+            margin-bottom: .238889rem;
+            font-size: .416667rem;
+        }
+        span{
+            display: block;
+            font-size: .333333rem;
+        }
+    }
+    .rewardDetaiR{
+        font-size: .416667rem;
+        width: 3.116667rem;
+        text-align: right;
+    }
+}
+.couponDescription{
+    color: #BEBEBE;
+    padding-left: .444444rem;
+    padding-top: .444444rem;
+    font-size: .333333rem;
+    line-height: .4rem;
+}

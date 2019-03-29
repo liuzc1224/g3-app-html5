@@ -1,0 +1,32 @@
+page-stage-order-detail {
+
+}
+.stage_order_detail{
+    .stage-box{
+        width:9.166667rem;
+        margin:.486111rem .416667rem 0;
+        padding:.416667rem .305556rem 0;
+        background:rgba(255,255,255,1);
+        border:1px solid rgba(204,204,204,1);
+        border-radius:.277778rem;
+        ul{
+            li{
+                display: flex;
+                justify-content: space-between;
+                font-size:.416667rem;
+                margin:0 0 .361111rem;
+                label{
+                    color:rgba(170,170,170,1);
+                }
+                p{
+                    color:rgba(51,51,51,1);
+                }
+            }
+            li.currRepayinner{
+                label,p{
+                    color:rgba(204,204,204,1);
+                }
+            }
+        }
+    }
+}

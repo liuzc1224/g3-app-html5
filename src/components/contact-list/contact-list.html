@@ -1,0 +1,14 @@
+<ion-header>
+  <div class="c-header">
+    <i class="c-back-arrow" (click) = 'back()'></i>
+    {{ "review.contact.select" | translate }}
+  </div>
+</ion-header>
+
+<ion-content>
+    <ul class="model-list">
+        <li *ngFor = 'let item of list' (click) = 'select(item)'>
+            {{ item.contactName }}
+        </li>
+    </ul>
+</ion-content>

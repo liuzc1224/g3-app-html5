@@ -1,0 +1,24 @@
+<common-header [centerTxt]='"Código do convite"'></common-header>
+
+<ion-content style="background: white">
+    <div class="c-input-group" style="margin-bottom: 0px">
+        <div class="c-input-title" style="padding: .444444rem 0 0 0px;margin:0px">
+            Código do convite
+        </div>
+        <input
+                type="text"
+                class="c-input-item userInfo_section_gap"
+                placeholder = 'Insira código do convite de 6 dígitos'
+                [(ngModel)]="invateCode"
+                maxlength="6"
+        >
+    </div>
+    <div class="preview_btnWrap" style="margin-top: 0px;margin-bottom: 0.25rem">
+        <button class="c-color-blue button" (click) = 'nextBtn($event , false)'>
+            Finalizar
+        </button>
+    </div>
+    <p style="text-align: center;font-size: .4rem;color: #333" (click) = 'nextBtn2($event)'>
+        Pular
+    </p>
+</ion-content>

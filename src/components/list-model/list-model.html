@@ -1,0 +1,13 @@
+<ion-header>
+    <div class="c-header">
+        <i class="c-back-arrow" (click) = 'back()'></i>
+        Selecione
+    </div>
+</ion-header>
+<ion-content>
+    <ul class="model-list">
+        <li *ngFor = 'let item of list' (click) = 'select(item)'>
+            {{ item.name }}
+        </li>
+    </ul>
+</ion-content>

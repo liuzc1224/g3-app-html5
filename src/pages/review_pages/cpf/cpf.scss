@@ -1,0 +1,78 @@
+cpf {
+
+}
+.cpf_wrap{
+  padding: 0 .555556rem ;
+}
+.cpf_icon{
+  width: .472222rem ;
+  height: .472222rem;
+  color: rgb(204 , 204 , 204);
+  padding-right: .416667rem ;
+  font-size: .555556rem ;
+  margin-right: 10px;
+}
+.cpf_content{
+  font-size: .305556rem ;
+  color:rgba(170,170,170,1);
+}
+.cpf_cpf{
+  margin-top: 1.152778rem ;
+  font-size: 18px;
+}
+
+.cpf_text{
+  width: 20% ;
+}
+.cpf_inputWrap{
+  width : 80% ;
+  position: relative;
+  padding-left: .444444rem ;
+  box-sizing: border-box ;
+}
+.cpf_input{
+  width: 1.388889rem ;
+  margin-right: .277778rem ;
+  border: none ;
+  border-bottom: 1px solid rgba(204,204,204,1);
+  text-align: center;
+  min-height: 19px;
+  height: 19px;
+  line-height: 10px;
+}
+.cpf_input_line{
+  width: 1.111111rem ;
+  position: relative;
+  border: none ;
+  border-bottom: 1px solid rgba(204,204,204,1);
+  margin-left: .555556rem ;
+  text-indent: .138889rem ;
+}
+.cpf_inputWrap::before{
+  content: "";
+  width: 1px;
+  height: .625rem;
+  background: #ccc;
+  display: block;
+  position: absolute;
+  right: 1.6rem;
+  transform: skewX(-30deg);
+  bottom: 0px;
+}
+.icoDefault{
+  background: url('../../../assets/imgs/regist/check.png') center ;
+  background-size: contain;
+}
+
+.icoActive{
+  background: url('../../../assets/imgs/regist/checked.png') center ;
+  background-size: contain;
+}
+.cpf_input_entity{
+  position : absolute;
+  right : 0px;
+  top : -5px;
+  width : 100%;
+  opacity : 0;
+  z-index: 10 ;
+}

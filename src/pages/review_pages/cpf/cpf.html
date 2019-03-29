@@ -1,0 +1,118 @@
+<common-header
+    [centerTxt]='"review.steps.cpf" | translate'
+    [leftFn]='back'
+    [parent]='parent'
+    ></common-header>
+
+<ion-content>
+    <div class="process-bar-wrap c-flex-row-center c-background">
+        <ul class="process-list c-flex-row-space">
+            <li class="lineAfter activeAfter" (click)='slideTo("LoanPurposePage" , 0)'>
+                <div class="step-text">
+                    1
+                </div>
+            </li>
+            <li class="lineAfter activeAfter lineBefore activeBefore" >
+                <div class="step-text" (click)='slideTo(false ,1)'>
+                    2
+                </div>
+            </li>
+            <li class="lineAfter lineBefore">
+                <div class="step-text">
+                    3
+                </div>
+            </li>
+            <li class="lineAfter lineBefore">
+                <div class="step-text">
+                    4
+                </div>
+            </li>
+            <li class="lineBefore lineAfter" >
+                <div class="step-text">
+                    5
+                </div>
+            </li>
+            <li class="lineBefore">
+                <div class="step-text">
+                    6
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="spinner_tip" *ngIf="!resMark">
+    </div>
+
+    <div *ngIf="resMark">
+        <div class="cpf_wrap c-flex-column-start" >
+            <div class="c-flex-row-allStart">
+                <ion-icon name="information-circle" class="cpf_icon"></ion-icon>
+                <span class="cpf_content">
+                    {{ "review.cpf.content" | translate }}
+                </span>
+            </div>
+
+            <div class="cpf_cpf c-flex-row-start">
+                <span class="c-required cpf_text">
+                    CPF
+                </span> :
+                <div class="c-flex-row-start cpf_inputWrap">
+                    <span class="cpf_input">
+                        {{ inputCpf[0] }}
+                    </span>
+                    <span class="cpf_input">
+                        {{ inputCpf[1] }}
+                    </span>
+                    <span class="cpf_input">
+                        {{ inputCpf[2] }}
+                    </span>
+                    <span class="cpf_input">
+                        {{ inputCpf[3] }}
+                    </span>
+                    <input
+                            type="tel"
+                            maxlength="11"
+                            class="cpf_input_entity"
+                            [(ngModel)]="inputEntity"
+                            (input)="transoToArr($event)"
+                            (focus)="makeRecord('cpfEdit')"
+                    >
+                </div>
+            </div>
+
+            <div class="regist_access_right" style="margin-top: 10px">
+                *Precisa de inserir o CPF de 11 dígitos , se o seu CPF tem 10 dígitos, adicione 0 no primeiro lugar.
+            </div>
+
+            <div class="regist_access c-flex-row-start">
+                <div class="regist_access_left">
+                    <div
+                            class='regist_checkbox'
+                            [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }'
+                            (click) = 'access() '
+                    >
+                    </div>
+                    <!-- <ion-icon class='regist_checkbox' name="ios-checkbox" [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }' ></ion-icon> -->
+                </div>
+
+                <div class="regist_access_right ">
+                    <div style="text-align: left">
+                        {{ "review.cpf.access.top" | translate }}
+                    </div>
+                    <div style="text-align: left">
+                        {{ "review.cpf.access.bottom" | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preview_btnWrap" >
+            <button class="c-color-blue button"
+                    (click) = 'nextBtn($event)'
+                    [disabled] = "!first || inputCpf.length == 0"
+            >
+                {{ "oper.next"  | translate}}
+            </button>
+        </div>
+    </div>
+</ion-content>

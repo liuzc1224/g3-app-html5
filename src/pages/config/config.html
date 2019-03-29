@@ -1,0 +1,29 @@
+<common-header [centerTxt]='"config.title" | translate'></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+  <div class="configWrap">
+
+    <div class="config_item c-flex-row-space" (click) ='setPayPass()'>
+      <span>
+        {{ "config.oper.payPass" | translate }}
+      </span>
+      <ion-icon class="config_icon" name="arrow-forward"></ion-icon>
+    </div>
+
+    <div class="config_item c-flex-row-space" (click) ='forUsrPass()'>
+      <span>
+        {{ "config.oper.userPass" | translate }}
+      </span>
+      <ion-icon class="config_icon" name="arrow-forward"></ion-icon>
+    </div>
+
+    <div class="config_item c-flex-row-space" style="border:none">
+      <span class="version_text">
+        {{ "config.version" | translate }}
+      </span>
+      <span class="version_text">
+        {{ APP_VERSION }}
+      </span>
+    </div>
+  </div>
+</ion-content>

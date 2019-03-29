@@ -1,0 +1,272 @@
+<common-header [centerTxt]=' "confirm.title" | translate '></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+
+    <div class="spinner_tip" *ngIf = '!cashInfo'></div>
+    <!-- 还款方式 -->
+    <div class="account_confirm_wrap" *ngIf="cashInfo">
+        <div class="c-flex-column-start">
+            <div style="color :#333 ">
+                Forma de pagamento
+            </div>
+            <div class="marTop" style="color :#585858 ">
+                {{type == 2 ? 'Parcelamento - pagamento de valor equivalente' : 'Parcelamento - pagamento de valor equivalente'}}
+            </div>
+        </div>
+    </div>
+    <!-- 借款金额 -->
+    <div class="account_confirm_wrap" *ngIf="cashInfo">
+        <div class="c-flex-column-start">
+            <div style="color :#333 ">
+                <!-- {{ "orderList.amount" | translate }} -->
+                Valor do empréstimo (R$)
+            </div>
+            <div class="marTop c-flex-row-end" style="color :#ccc;width: 100%;">
+                <div style="height:.763889rem;font-size: .763889rem;width: 45%;">
+                    <ion-item>
+                        <ion-input  type="number" [(ngModel)]="broMoney" (ionBlur)="checkBroMoney($event)"></ion-input>
+                    </ion-item>
+                </div>
+                <!-- <p style="color: #000;font-size: .763889rem;line-height:.763889rem;width: 40%;height:.763889rem;"></p> -->
+                <p style="font-size:.361111rem;line-height: .361111rem;">Acrescentado em R$ {{cashInfo['loanQuotaIncrease']}}</p>
+            </div>
+            <div class="marTop" style="color :#aaa;font-size: .277778rem;">
+                Valor mínimo de R$ {{cashInfo['minBorrowAmount']}}  Valor máximo de R$ {{cashInfo['maxBorrowAmount']}}
+            </div>
+        </div>
+    </div>
+
+    <div class="account_confirm_list" *ngIf="cashInfo">
+        <!-- 借款期限 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Prazo do empréstimo
+            </p>
+            <p #broDate class="selectBlue">
+                {{ broDateVal }}<ion-icon name="arrow-forward" style="margin-left: 5px;"></ion-icon>
+            </p>
+        </div>
+        <!-- 借款日利率 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Taxa de juros ao mês
+            </p>
+            <p style="color :#585858 ">
+               {{ type == 1 ? (cashInfo.borrowDayRate*100).toFixed(2) : (cashInfo.borrowMonthRate*100).toFixed(2)}}%
+            </p>
+        </div>
+        <!-- 审核服务费 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Taxa de avaliação ao mês
+            </p>
+            <p style="color :#585858 ">
+                {{ type == 1 ? (cashInfo.onceAuditFee*100).toFixed(2) : (cashInfo.monthAuditFee*100).toFixed(2)}}%
+            </p>
+        </div>
+        <!-- 技术服务费 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Taxa de serviço técnico ao mês
+            </p>
+            <p style="color :#585858">
+                {{ type == 1 ? (cashInfo.onceTechnicalFee*100).toFixed(2) : (cashInfo.monthTechnicalFee*100).toFixed(2)}}%
+            </p>
+        </div>
+        <!-- 联邦税 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                IOF
+            </p>
+            <p style="color :#585858 ">
+                {{cashInfo.iof ? cashInfo.iof.toFixed(2) : '0.00'}}
+            </p>
+        </div>
+         <!-- 优惠券 暂时隐藏 -->
+         <!-- <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Cupom
+            </p>
+            <p class="selectBlue">
+                {{cashInfo.discountAmount}}<ion-icon name="arrow-forward" style="margin-left: 5px;"></ion-icon>
+            </p>
+        </div> -->
+        <!-- 应还金额 -->
+        <div class="c-flex-row-space account-item">
+            <p style="color :#333 ">
+                Valor a ser pago (R$)
+            </p>
+            <p style="color :#585858 ">
+                {{ type === 1? (cashInfo.repayAmount ? cashInfo.repayAmount.toFixed(2) : '0.00') : (cashInfo.repayTotalAmount ? cashInfo.repayTotalAmount.toFixed(2) : '0.00') }} <span *ngIf="type == 2" style="color:#FF8467;" (click)="goStagingDetails()">Ver detalhe</span>
+            </p>
+        </div>
+        <!-- 取款账户 -->
+        <div class="c-flex-row-space account-item" style="border:none;">
+            <p style="color :#333 ">
+                Conta de recebimento
+            </p>
+            <p class="selectBlue" (click) = 'makeAccount()'>
+                {{ account }}<ion-icon name="arrow-forward" style="margin-left: 5px;"></ion-icon>
+            </p>
+        </div>
+    </div>
+
+    <div class="account_confirm_wrap" *ngIf= 'shouldPay && resMark == true'>
+
+        <div class="c-flex-row-space" style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.amount" | translate }}
+            </div>
+            <div>
+                R${{ orderInfo.auditMoney }},00
+            </div>
+        </div>
+
+        <!-- <div class="c-flex-row-space">
+          <div style="color :#333 ">
+            {{ "orderList.limit" | translate }}
+          </div>
+          <div>
+              {{ orderInfo.loanDays }}Dias
+          </div>
+        </div> -->
+
+        <div class="c-flex-row-space" style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.limit" | translate }}
+            </div>
+            <div style="position: relative;">
+                <!--  style="color : #00b4ef"  -->
+                <!-- <div class="c-flex-row-center"> -->
+                    <!-- {{ orderInfo.loanDays }}Dias -->
+                    <!-- <ion-icon name="arrow-forward" style="margin-left: 5px;"></ion-icon> -->
+                <!-- </div> -->
+                <div>
+                    {{ orderInfo.loanDays }}
+                </div>
+                <!-- <ion-select
+                        class="c-form-input userInfo_section_gap"
+                        style="line-height: calc(1.277778rem - 22px);position: absolute;top:0px;left:0px;opacity: 0;z-index:99;width: 100%; height: 100%;"
+                        [cancelText]='"oper.cancel" | translate'
+                        [okText]='"oper.sure" | translate'
+                        [placeholder] = ' "oper.chose" | translate '
+                        [(ngModel)]="orderInfo.loanDays"
+                >
+                    <ion-option value="7">7</ion-option>
+                    <ion-option value="14">14</ion-option>
+                    <ion-option value="28">28</ion-option>
+                </ion-select> -->
+            </div>
+        </div>
+
+        <div class="c-flex-row-space" style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.tax" | translate }}
+            </div>
+            <div>
+                {{ orderInfo.lendRate | PercentPipe }}%
+            </div>
+        </div>
+
+        <div class="c-flex-row-space" style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.rate" | translate }}
+            </div>
+            <div>
+                R${{ (orderInfo.lendRateMoney || 0).toFixed(2) | MoneyFormatPipe }}
+            </div>
+        </div>
+
+        <div class="c-flex-row-space" style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.federalTax" | translate }}
+            </div>
+            <div>
+                R${{ (vlrIOF ? vlrIOF : 0).toFixed(2) | MoneyFormatPipe }}
+            </div>
+        </div>
+
+         <!-- 选择优惠券 -->
+         <!-- <div class="c-flex-row-space" style="margin-bottom:.458333rem;">
+            <div style="color :#333 ">
+                {{ "orderList.award" | translate }}
+            </div>
+            <div style="color : #00b4ef ; margin-top: -4px;" (click) = 'makeAward()'>
+                {{ couponInfo ? chooseAward : "Selecione cupom" }}
+                <ion-icon name="arrow-forward"></ion-icon>
+            </div>
+        </div> -->
+
+        <div class="c-flex-row-space"  style="margin-bottom:.458333rem">
+            <div style="color :#333 ">
+                {{ "orderList.shouldPay" | translate }}
+            </div>
+            <div>
+                R${{ shouldPay.toFixed(2) | MoneyFormatPipe }}
+            </div>
+        </div>
+
+        <div class="c-flex-row-space">
+            <div style="color :#333 ">
+                {{ "orderList.account" | translate }}
+            </div>
+            <div style="color : #00b4ef ; margin-top: -4px;" (click) = 'makeAccount()'>
+                {{ account }}
+                <ion-icon name="arrow-forward"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="cashInfo && type == 1">
+        <div class="regist_access c-flex-row-start" style="padding:0 .597222rem;">
+            <div class="regist_access_left">
+                <div
+                        class='regist_checkbox'
+                        [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }'
+                        (click) = 'access() '
+                        style="margin-right: 5px"
+                >
+                </div>
+                <!-- <ion-icon class='regist_checkbox' name="ios-checkbox" [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }' ></ion-icon> -->
+            </div>
+            <div class="regist_access_right" >
+                <div (click)="getPdfUrl(true)" style="color: #00b4ef;text-decoration: underline;">
+                    {{ "confirm.contract" | translate }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="text-plain" *ngIf = 'shouldPay && resMark == true'>
+            O valor a ser pago apresentado não inclui o IOF, o pagamento do IOF está sujeito ao acordo de empréstimo.
+    </div> -->
+
+    <div class="c-flex-row-center" style="padding: 0 .555556rem" *ngIf = 'cashInfo && resMark == true'>
+        <button style="margin-top: .569444rem" class="c-color-blue button" (click) = 'apply($event)' >
+            {{  "confirm.btn" | translate }}
+        </button>
+    </div>
+
+</ion-content>
+
+<div *ngIf = 'padShow'>
+    <number-pad [title] = 'padTitle' (cancel) = 'numCancel($event)' (complete) = 'numComplete($event)'>
+
+    </number-pad>
+</div>
+
+<div class="confirm_shadow c-flex-row-center" *ngIf = 'wrapShow'>
+    <div class="confirm_box">
+        <div class="confirmText c-flex-row-center">
+            {{ "orderList.confirm" | translate }}
+        </div>
+        <div class="confirmBtn c-flex-row-center">
+            <div (click) = 'hide()' >
+                {{ "oper.cancel" | translate }}
+            </div>
+            <div (click)="sure($event)">
+                configurar
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<common-header [centerTxt]='"serviceCenter.feedBack.title" | translate'></common-header>
+
+<ion-content>
+    <form [formGroup]="validForm" class="c-form-wrap" style="margin-top: .722222rem">
+        <div class="c-input-group">
+            <div class="c-input-title c-required">
+                {{ "serviceCenter.feedBack.selectTitle" | translate }}
+            </div>
+            <input
+                    type="text"
+                    class="c-input-item userInfo_section_gap"
+                    formControlName='title'
+            >
+            <!--
+            <ion-select
+                    formControlName='opinionConfigId'
+                    class="c-form-input"
+                    style="line-height: calc(1.277778rem - 22px)"
+                    [cancelText]='"oper.cancel" | translate'
+                    [okText]='"oper.sure" | translate'
+                    [placeholder] = ' "oper.chose" | translate '
+            >
+                <ion-option *ngFor='let item of enum_config' [value]='item.id'>
+                    {{ item.title }}
+                </ion-option>
+            </ion-select>
+            -->
+        </div>
+
+        <div class="c-input-group">
+            <div class="c-input-title c-required">
+                {{ "serviceCenter.feedBack.content" | translate }}
+            </div>
+            <div style="position: relative;">
+                <textarea class="feedBack_textArea" formControlName='content' ></textarea>
+                <span class="feedBack_rest">
+                    {{ validForm.value.content ? validForm.value.content.length : 0 }}
+                    <span>
+                        / 300
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="c-input-group">
+            <div class="c-input-title c-required">
+                {{ "serviceCenter.feedBack.eMail" | translate }}
+            </div>
+            <input
+                    type="text"
+                    class="c-input-item userInfo_section_gap"
+                    formControlName='email'
+
+            >
+        </div>
+
+        <div class="c-input-group">
+            <div class="c-input-title c-required">
+                {{ "serviceCenter.feedBack.telPhone" | translate }}
+            </div>
+            <input
+                    type="tel"
+                    class="c-input-item userInfo_section_gap"
+                    formControlName='phoneNumber'
+            >
+        </div>
+    </form>
+
+    <div class="preview_btnWrap" >
+        <button class="c-color-blue button" (click) = 'submitFeed($event)' >
+            {{ "oper.next"  | translate}}
+        </button>
+    </div>
+</ion-content>

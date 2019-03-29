@@ -1,0 +1,39 @@
+user-income {
+
+}
+.income_title{
+    text-align: left;
+}
+.income_small{
+    font-size: .333333rem ;
+    color:rgba(170,170,170,1);
+}
+.income_proof{
+    width: 100% ; 
+    height: 2.5rem;
+    margin-top: .291667rem ;
+}
+.incomCam_ico{
+    position: relative;
+}
+.incomCam_ico::after{
+    content: "" ;
+    position: absolute;
+    top : .555556rem ;
+    left : 50% ;
+    margin-left: -0.472222rem ;
+    background: url('../../assets/imgs/income/cam.png') round ;
+    width: .944444rem ; 
+    height: .708333rem;
+    display: block ;
+}
+.incomCam_ico::before{
+    content: "Toque para upload" ;
+    position: absolute;
+    top : 1.541667rem ;
+    display: block ;
+    color:rgba(170,170,170,1);
+    font-size: .333333rem ;
+    width: 100% ;
+    text-align: center
+}

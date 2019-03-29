@@ -1,0 +1,24 @@
+<common-header [centerTxt]='"confirm.title" | translate'></common-header>
+
+<ion-content>
+  <div class="spinner_tip" *ngIf='shouldPay'></div>
+  <div class="stagingDetailsTop c-flex-row-start" *ngIf='!shouldPay'>
+    <div class="stagingDetailsTopL c-flex-column-between">
+      <p>Valor total a ser pago</p>
+      <p style="font-size:.666667rem;color: #333;">{{repayTotalAmount.toFixed(2)}}</p>
+    </div>
+    <div class="stagingDetailsTopR">
+      Pagamento de valor equivalente ao mês
+    </div>
+  </div>
+  <ul class="stagingDetailsList">
+    <li class="c-flex-row-start" *ngFor="let item of detailInfo">
+      <p class="itemL">{{item.repayDate}}</p>
+      <p class="itemR c-flex-column-allStart">
+        <i>{{item.repayAmount.toFixed(2)}}</i>
+        <span class="btoTip">incluindo {{item.financingAmount.toFixed(2)}} de valor financiado e {{item.interest.toFixed(2)}} de juros</span>
+        <span class="dragY"></span>
+      </p>
+    </li>
+  </ul>
+</ion-content>

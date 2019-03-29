@@ -1,0 +1,35 @@
+footer-service {}
+
+.small-tip{
+  color: #CCCCCC;
+  font-size: .333333rem ;
+  text-align: center;
+  margin-bottom: 1.569444rem;
+  position: relative;
+}
+
+.line{
+  position: relative;
+}
+
+.line::after{
+  content: '';
+  display: block;
+  width: .972222rem ;
+  height: 1px;
+  background: #ccc;
+  position: absolute;
+  top:50%;
+  left: -1.072222rem;
+}
+
+.line::before{
+  content: '';
+  display: block;
+  width: .972222rem ;
+  height: 1px;
+  background: #ccc;
+  position: absolute;
+  top:50%;
+  right: -1.072222rem;
+}

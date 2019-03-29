@@ -1,0 +1,47 @@
+<common-header [centerTxt]=' "account.takeCash.title" | translate '></common-header>
+
+<ion-content>
+  <div class="account_setpass">
+    {{ "account.takeCash.subTitle" | translate }}
+  </div>
+
+  <div class="account_passWrap">
+    <div class=" c-flex-row-start">
+        <span class="account_borderRight">
+          {{ passwordArr[0] }}
+        </span>
+        <span class="account_borderRight">
+            {{ passwordArr[1] }}
+
+        </span>
+        <span class="account_borderRight">
+            {{ passwordArr[2] }}
+
+        </span>
+        <span class="account_borderRight">
+            {{ passwordArr[3] }}
+
+        </span>
+        <span class="account_borderRight">
+            {{ passwordArr[4] }}
+
+        </span>
+        <span>
+            {{ passwordArr[5] }}
+        </span>
+    </div>
+    <input type="tel" maxlength="6" [(ngModel)] = 'password' class="account_input" (input) = 'passChange($event)'>
+  </div>
+  <div class="account_tip c-flex-row-center">
+    <ion-icon name="information-circle" style="margin-right:.291667rem"></ion-icon>
+    <span>
+        {{ "account.takeCash.tip" | translate }}
+    </span>
+  </div>
+
+  <div class="c-flex-row-center" style="padding: 0 .555556rem">
+    <button style="margin-top: .569444rem" class="c-color-blue button" (click) = 'setPayPass($event)' >
+        {{  "config.title" | translate }}
+    </button>
+  </div>
+</ion-content>

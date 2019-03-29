@@ -1,0 +1,21 @@
+<common-header [centerTxt]=' "aboutRepay.title" | translate '></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+    <div class="about_us_section" *ngFor = 'let item of dataBlock'>
+      <div style="text-align:center;font-weight: bold">
+        {{ item.title }}
+      </div>
+
+      <div style="margin-top:.458333rem ">
+        <div class="aboutRepay_wrap" *ngFor ='let list of item.list , let index = index'>
+          <span>
+            {{ index + 1 }}
+          </span>
+          <span>
+              {{ list }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+</ion-content>

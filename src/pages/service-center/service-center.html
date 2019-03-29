@@ -1,0 +1,31 @@
+<common-header [centerTxt]='"serviceCenter.title" | translate'></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+    <div class="service_header c-flex-row-center">
+        <div class="service_left c-flex-column-center">
+            <a (click)="online()" class="c-flex-column-center flexAnchor">
+                <img src="../../assets/imgs/service/msg.png" alt="" class="service_icon">
+                <span class="service_text">
+                    {{ "serviceCenter.smallTitle.left" | translate }}
+                </span>
+            </a>
+        </div>
+        <div class="service_right c-flex-column-center">
+            <a href="tel:+55（11）21243485" class="c-flex-column-center flexAnchor">
+                <img src="../../assets/imgs/service/tel.png" alt="" class="service_icon">
+                <span class="service_text">
+                    {{ "serviceCenter.smallTitle.right" | translate }}
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="spinner_tip" *ngIf = '!expanConf'>
+    </div>
+
+    <ul class="help-center-list" *ngIf = " expanConf ">
+        <li *ngFor='let item of expanConf'>
+            <expan-box [headerTxt] = 'item.title' [innerTxt] = 'item.contents'></expan-box>
+        </li>
+    </ul>
+</ion-content>

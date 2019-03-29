@@ -1,0 +1,744 @@
+{
+  "userLoan": {
+    "title": "os Termos de Uso"
+  },
+  "meLoan": {
+    "title": "Política de Privacidade"
+  },
+  "tip": {
+    "operateFail": "Operação não realizada",
+    "require": "Insira cada informação correta",
+    "forgotPass": "Esquecer Senha?",
+    "operateFailWithReason": "Operação não realizada,razão: ",
+    "operateSuccess": "Sucesso da operação",
+    "fetchFailReason": "Ganhar informação falhou,razão: ",
+    "notSame": "Conteúdo inconsistente duas vezes",
+    "deal": "Processando",
+    "phoneRequire": "Número de celular não pode ser branco" ,
+    "canNotSame" : "Não pode selecionar mesma pessoa de contato" ,
+    "notOpen" : "Esta função ainda não está aberta" ,
+    "outOfDate" : "Login perdeu a validade, faça novamente login" ,
+    "valueEmpty" : "Agora sem os dados" ,
+    "requestPermission" : "Por favor, autorize primeiro"
+  },
+  "login": {
+    "loading": "Entrando",
+    "placeholder": {
+      "username": "Insira número de celular",
+      "password": "Insira senha"
+    },
+    "loginBtn": "Login",
+    "regist": "Faça seu cadastro",
+    "noAccount": "Não tem conta ？ ",
+    "loginGuideTxt": "Sua necessidade atendida em qualquer hora e lugar"
+  },
+  "home": {
+    "choseLimitMount": "Selecione o valor do empréstimo?",
+    "choseLimitDay": "Selecione o prazo do empréstimo?",
+    "button": "Solicitar",
+    "mount": {
+      "top": "Valor do",
+      "bottom": "empréstimo(R$)"
+    },
+    "rate": {
+      "top": "Juros do",
+      "bottom": " empréstimo(R$)"
+    },
+    "repay": {
+      "top": "Valor a ser",
+      "bottom": "pago(R$)"
+    },
+    "footer": {
+      "rateDay": "Taxa de juros fixa de",
+      "rateYear": "o que corresponde a",
+      "repayDate": "Data de pagamento",
+      "kownsMore": "Em caso de dúvidas",
+      "contact": "entre em contato com o nosso SAC"
+    },
+    "cashPop": {
+      "txt": "Parabéns! Você acabou de fazer um empréstimo pessoal com o app MyLoan. Se estiver tudo certo, dentro de 48 horas você receberá o crédito da sua conta. O atraso no pagamento pode acarretar em juros e protesto no SPC.  Faça o pagamento em dia e continue aproveitando as facilidades do MyLoan.",
+      "btn": "Estou ciente"
+    }
+  },
+  "side": {
+    "menu": {
+      "history": "Histórico",
+      "award": "Meu cupom",
+      "service": "Atendimento ao Cliente",
+      "invite": "Convidar amigos",
+      "aboutUs": "Sobre nós",
+      "aboutRepay": "Sobre pagamento",
+      "config": "Configurações",
+      "logout": "Sair da conta",
+      "notLogin": "Não realizado"
+    }
+  },
+  "unit": {
+    "currency": "R$",
+    "day": "dias"
+  },
+  "area": [
+    {
+      "name": "China",
+      "value": "86"
+    },
+    {
+      "name": "Brasil",
+      "value": "55"
+    }
+  ],
+  "areaNameSelect": "Selecione região",
+  "register": {
+    "regist": "Cadastrar",
+    "setPass": {
+      "title": "Configurar senha de login",
+      "explain": "Enviar código de verificação para o celular cadastrado",
+      "repost": "enviar código",   
+      "set": "Configure senha de login",
+      "tip": "6-20 carateres,incluindo qualquer dois tipos de números, letras e símbolos ",
+      "again": "Insira de novo senha de login",
+      "button": "Finalizar"
+    },
+    "placeholder": {
+      "phone": "Insira o número do seu celular",
+      "mail": "Insira seu e-mail",
+      "cpf": "Número do CPF"
+    },
+    "access": ["Concordo com", " os Termos de Uso", "Política de Privacidade", " de MyLoan"],
+    "hasAccount": "Já tem conta",
+    "login": "Faça login",
+    "areaName": "Brasil"
+  },
+  "audit": {
+    "tip": "Análise de velocidade máxima",
+    "wait": "Em análise, por favor, aguarde com paciência",
+    "notYou": "Se não foi você que solicitou o empréstimo",
+    "contact": "entre em contato com o nosso serviço de atendimento ao cliente"
+  },
+  "refuse": {
+    "first": "Prezado usuário",
+    "sec": "lamentamos informá-lo de que você",
+    "third": "não esteja qualificado para solicitar um",
+    "fourth": "empréstimo em MyLoan",
+    "fifth": "Solicite novamente após",
+    "reapply": "Solicitar novamente"
+  },
+  "loan": {
+    "wait": "Nosso banco está processando a sua solicitação",
+    "top": "Se você não receber o crédito na sua conta dentro de 24 horas",
+    "bottom": "entre em contato com o nosso serviço de atendimento ao cliente",
+    "order": "Processando"
+  },
+  "loanFail": {
+    "order": "Sacar novamente",
+    "wait": "Falha na liberação do empréstimo do banco , confirme as informações da conta de saque, saque novamente. "
+  },
+  "cash": {
+    "title": "Prezado usuário,você pediu com sucesso um empréstimo de",
+    "order": "Receber agora"
+  },
+  "repay": {
+    "order": "Pagar",
+    "head": "Falta",
+    "foot": "dias para pagar",
+    "first": "Prezado usuário, por favor, ",
+    "sec": "pague antes de",
+    "third_head": "Depois do vencimento, será cobrada uma multa de",
+    "third_foot": " ao mês.",
+    "fouth": "Durante o lançamento do produto, não cobrar outras despesas.",
+    "unit": "Valor a ser pago（R$）"
+  },
+  "overDue": {
+    "order": "Pagar",
+    "head": "A fatura venceu o prazo há",
+    "foot": "dias!",
+    "first": "Prezado usuário, por favor, ",
+    "sec": "pague antes de",
+    "third_head": "Prezado usuário, pague em breve. Depois do vencimento, será cobrada uma multa de",
+    "third_foot": "ao mês. Durante o lançamento do produto, não cobrar outras despesas.",
+    "fouth": "Durante o lançamento do produto, não cobrar outras despesas.",
+    "unit": "Valor a ser pago（R$）"
+  },
+  "account": {
+    "takeCash": {
+      "title": "Configurar senha de pagamento",
+      "subTitle": "Configure 6 dígitos de números de senha",
+      "tip": "Senha de pagamento é utilizada para sacar dinheiro para a conta bancária, gerencie de forma adequada."
+
+    }
+  },
+  "repayQr": {
+    "title": "Sobre pagamento",
+    "qrTitle": "Boleto",
+    "acountTitle": "Conta de pagamento",
+    "magnify": "Toque para ver foto maior",
+    "copyTitle":"Copiar código",
+    "copyBtn":"Copiar",
+    "sendEmailTitle":"Enviar por e-mail",
+    "sendEmailBtn":"Enviar",
+    "tips":"Já realizou o pagamento, lembre MyLoan",
+    "copySuccessTxt":"Sucesso de copiar",
+    "sendEmailSuccess":"Sucesso de enviar",
+    "emailTitle":"Enviar boleto por e-mail",
+    "emailInput":"E-mail:",
+    "confirm":"Confirmar",
+    "Cancelar":"Cancelar"
+  },
+  "operate": {
+    "copy": "copiar"
+  },
+  "orderList": {
+    "title": "Proposta histórica",
+    "time": "Tempo de criação",
+    "status": "Estado da ordem",
+    "award": "Cupom",
+    "amount": "Valor do empréstimo",
+    "limit": "Prazo do empréstimo",
+    "tax": "Taxa de juros diária",
+    "rate": "Juros do empréstimo",
+    "shouldPay": "Valor a ser pago",
+    "account": "Conta de recebimento",
+    "empty": "Cartão não vinculado",
+    "confirm": "Ainda não configura senha de pagamento",
+    "padTitle": "Insira senha de pagamento",
+    "noBind": "Cartão não vinculado",
+    "federalTax": "IOF"
+  },
+  "msgCenter": {
+    "title": "Centro de Informação"
+  },
+  "serviceCenter": {
+    "title": "Atendimento ao Cliente",
+    "smallTitle": {
+      "left": "Consulta online",
+      "right": "Consulta de telefone"
+    },
+    "feedBack": {
+      "title": "Consulta online",
+      "selectTitle": "Tópico do comentário",
+      "content": "Conteúdo do comentário" ,
+      "eMail": "E-mail",
+      "email": "123",
+      "telPhone": "Número de telefone",
+      "tel": " 123sa"
+    },
+    "email": "Insira e-mail",
+    "tel": "Insira telefone de contato"
+  },
+  "about": {
+    "title": "Sobre nós",
+    "intro": {
+      "content": "Panshi é uma empresa propulsada pela tecnologia, investiu bilhões de RMB para promover o desenvolvimento e a atualização de próprios produtos, criou indepentemente a plataforma DSP, o sistema RTB, a plataforma SSP, o ADExchange e o sistema de gerenciamento de dados de DMP. O Próprio sistema de big data dispõe mais de 3000 servidores no mundo, fornecendo suporte de dados superior a 10T para o negócio de finanças na Internet.",
+      "footer": "Até o início de 2018, a Panshi possui 13 filiais e 2000+ funcionários."
+    },
+    "dataCount": {
+      "title": "Segundo as estatísticas do início de 2018",
+      "list": [
+        "Cobrar 100+ países",
+        "Passar 400.000+ sites",
+        "Envolver na 36+ indústrias",
+        "1 bilhão de visualizações de páginas por dia",
+        "95% da cobertura de internautas em vários países"
+      ]
+    },
+    "product": {
+      "title": "Sobre produto",
+      "block": [{
+        "title": "Sobre produto",
+        "contents": [
+          "A Panda do Brasil Tecnologia Financeira LTDA",
+          "Leva você para a nova era dos serviços financeiros da Internet.",
+          "Grande quantidade de modelos de negócios financeiros.",
+          "Serviços financeiros rápidos, fáceis e seguros, ",
+          "Cobertura completa na América Latina!"
+        ],
+        "subContenes": [
+          "1.Aproveite já o benefício da Panda do Brasil Tecnologia Financeira LTDA , onde você só paga 1% de taxa de juros diária.",
+          "2.Durante o lançamento da Panda do Brasil Tecnologia Financeira LTDA , a taxa de juros diária de todos os empréstimos é de apenas 1%, sem cobrar outras despesas.",
+          "3.Pode selecionar à vontade o montante do empréstimo, o montante máximo é de R$1500.Empréstimo de R$500 a R$1500, pode selecionar o montante do empréstimo flexivelmente.",
+          "4.O prazo do empréstimo é flexível e tem muitas opções.  Com o prazo mínimo de 7 dias e o prazo máximo de 28 dias, a Panda do Brasil Tecnologia Financeira LTDA oferece várias opções do prazo do empréstimo, você pode encontrar uma solução que irá ajudar realmente a sua vida financeira.",
+          "5.Você recebe a resposta em um dia útil.",
+          "6.Não pede nenhum depósito antecipado ou garantia bancária.",
+          "7.O processo é 100% online, sem sair de casa.",
+          "8.A tecnologia avançada de segurança de dados financeiros desenvolvida pela Panda do Brasil Tecnologia Financeira LTDA garante 100% de segurança da sua conta.",
+          "9.Não se preocupe sobre esquecer de pagar a prestação, você receberá o aviso de pagamento por SMS e e-mail.",
+          "9.Sem fazer fila e sem burocracia, o seu crédito saudável é tudo que você precisa para obter um empréstimo.",
+          "A Panda do Brasil Tecnologia Financeira LTDA melhora a sua vida!"
+        ]
+      },
+        {
+          "title": "Introdução da empresa",
+          "contents": [
+            "A Panda do Brasil Tecnologia Financeira LTDA é uma jovem companhia de tecnologia financeira da Internet, foi fundada em 2018. No projeto foi investido 600 milhões em fundos iniciais. Depois de mais de meio ano de experiência acumulada, lançou o produto de tráfego autônomo e construiu uma plataforma consultiva de informações financeiras na Internet no Brasil, México e outros países da América Latina."
+          ],
+          "subContenes": [
+            "1. A matriz da Panda do Brasil Tecnologia Financeira LTDA tem mais de 10 anos de experiência em publicidade na Internet, os negócios estão em mais de 100 países, passa mais de 400.000 sites e cobre 95% + dos internautas em vários países.",
+            "2. O sistema de big data próprio da matriz da Panda do Brasil Tecnologia Financeira LTDA  implantou mais de 3.000 servidores em todo o mundo, fornece mais de 10T de dados diariamente, oferecendo um forte suporte de dados para os negócios de consultas financeiras na Internet da Panda do Brasil Tecnologia Financeira LTDA.",
+            "3. Atualmente, a Panda do Brasil Tecnologia Financeira LTDA estabeleceu as relações de cooperação a longo prazo e estáveis com muitas empresas como BMP MoneyPlus, SPC do Brasil, etc."
+          ]
+        }
+      ]
+    }
+  },
+  "aboutRepay":{
+    "title":"Sobre pagamento",
+    "block":[
+      {
+        "title":"Processo de pagamento",
+        "list":[
+          "Abre o aplicativo MyLoan, observa o código do boleto.",
+          "Faz transferência bancária, nota a conta do aplicativo（número de celular）e o nome real."
+        ]
+      },
+      {
+        "title":"Observações",
+        "list":[
+          "A fim de garantir o sucesso do pagamento, por favor, confirme cuidadosamente se o valor a ser pago está correto quando paga o empréstimo.",
+          "Por favor, não se esqueça de preencher o seu nome real e o número de celular na caixa de notas para que possamos verificar as informações do seu pagamento."
+        ]
+      }
+    ]
+  },
+  "config": {
+    "title": "Configurar",
+    "oper": {
+      "payPass": "Alterar senha de pagamento",
+      "userPass": "Alterar senha de login"
+    },
+    "version": "Versão"
+  },
+  "confirm": {
+    "title": "Detalhes da ordem",
+    "btn": "Confirmar empréstimo",
+    "contract" : "Concordo com a CCB"
+  },
+  "makeAccount": {
+    "title": "Configurar conta de saque",
+    "tip": "Conta errada ou conta não própria afectará a chegada do empréstimo à conta",
+    "bank": "Banco",
+    "no": "Número de agência",
+    "accountType": "Tipo de conta",
+    "accountNo": "Número de conta",
+    "accountCode": "Dígito de conta"
+  },
+  "review": {
+    "titles": ["Uso do empréstimo", "Verificação de CPF", "Confirmação de identidade", "Suas informações", "Prova da renda", "Contato de emergência"],
+    "steps" : {
+      "first" : "Uso do empréstimo" ,
+      "cpf" : "Verificação de CPF" ,
+      "userAuth" : "Confirmação de identidade" ,
+      "userInfo" : "Suas informações" ,
+      "income" : "Prova da renda" ,
+      "contact" : "Contato de emergência"
+    },
+    "cpf": {
+      "content": "Prezado usuário, se a consulta do seu CPF estiver negativa em SPC, MyLoan não lhe poderá fornecer um empréstimo. Se a situação do crédito for normal, MyLoan vai continuar processando sua solicitação.",
+      "access": {
+        "top": "Autorizo banco a consultar CPF",
+        "bottom": "Autorizo MyLoan a consultar CPF em SPC"
+      }
+    },
+    "auth": {
+      "front": "Tire uma foto da frente do seu RG",
+      "back": "Tire uma foto do verso do seu RG",
+      "hand": "Tire uma foto do seu RG ao lado do seu rosto",
+      "input": {
+        "id": "Informe o número do seu RG",
+        "name": "Escreva o seu nome completo, igual ao RG",
+        "fatherName": "Insira sobrenome do pai do RG",
+        "motherName": "Insira sobrenome da mãe do RG"
+      },
+      "placeHolder": {
+        "id": "Insira conteúdo",
+        "name": "Escreva o seu nome completo, igual ao RG",
+        "fatherName": "Sobrenome do pai",
+        "motherName": "Sobrenome da mãe"
+      }
+    },
+    "baicInfo": {
+      "input": {
+        "usernameShort": "Como podemos te chamar",
+        "fatherName": "Nome completo do seu pai",
+        "motherName": "Nome completo da sua mãe",
+        "gender": "Sexo",
+        "birthday": "Data de nascimento",
+        "birthplace": "Cidade de nascimento",
+        "educationBackground": "Escolaridade",
+        "maritalStatus": "Estado civil",
+        "addess": "Endereço Residencial",
+        "residentialPostcode": "CEP",
+        "residentialDuration": "Há quanto tempo você mora neste endereço？",
+        "homeTelephone": "Telefone residencial"
+      },
+      "placeHolder": {
+        "city": "Insira cidade",
+        "block" : "Insira bairro" ,
+        "currentResidential": "Insira endereço da rua em detalhes",
+        "homeTel": "Insira telefone residencial",
+        "homeTelephoneAreaCode": "DDD"
+      }
+    },
+    "income": {
+      "title": "Preencha seus dados com o máximo de precisão possível. Erros podem atrapalhar o processo",
+      "input": {
+        "socialIdentityCode": "Ocupação",
+        "incomTitle": "Fonte da renda",
+        "monthlyIncome": "Renda mensal (R$)",
+        "payrollPaymentTypeCode": "Forma de receber o pagamento",
+        "payrollPaymentDate": "Dia do pagamento",
+        "incomeProof": {
+          "title": "Comprovante de renda",
+          "explain": "Exemplo: Extrato bancário, holerite"
+        }
+      },
+      "placeHolder": {
+        "otherIncomeSource": "Insira outra fonte da renda"
+      }
+    },
+    "contact": {
+      "title": "Recomendamos que escolha pais e cônjuge como contatos de emergência.",
+      "select": "Selecione contatos",
+      "input": {
+        "title": "Contato de emergência",
+        "relation": "Selecione a relação",
+        "contactName": "Insira nome completo do contato",
+        "contactPhone": "Toque adicionar telefone do contato"
+      }
+    }
+  },
+  "oper": {
+    "next": "Prosseguir",
+    "chose": "Selecione",
+    "input": "Insira conteúdo",
+    "cancel": "Cancelar",
+    "sure": "Confirmar",
+    "enter": "Entrar",
+    "commit": "Enviar para análise"
+  },
+  "enum": {
+    "sex": [{
+      "name": "Masculino",
+      "value": "1"
+    },
+      {
+        "name": "Feminino",
+        "value": "2"
+      }
+    ],
+    "state": [{
+      "name": "Acre",
+      "value": "AC"
+    },
+      {
+        "name": "Alagoas",
+        "value": "AL"
+      },
+      {
+        "name": "Amapá",
+        "value": "AP"
+      },
+      {
+        "name": "Amazonas",
+        "value": "AM"
+      },
+      {
+        "name": "Bahia",
+        "value": "BA"
+      },
+      {
+        "name": "Ceará",
+        "value": "CE"
+      },
+      {
+        "name": "Distrito Federal",
+        "value": "DF"
+      },
+      {
+        "name": "Espírito Santo",
+        "value": "ES"
+      },
+      {
+        "name": "Goiás",
+        "value": "GO"
+      },
+      {
+        "name": "Maranhão",
+        "value": "MA"
+      },
+      {
+        "name": "Mato Grosso",
+        "value": "MT"
+      },
+      {
+        "name": "Mato Grosso do Sul",
+        "value": "MS"
+      },
+      {
+        "name": "Minas Gerais",
+        "value": "MG"
+      },
+      {
+        "name": "Pará",
+        "value": "PA"
+      },
+      {
+        "name": "Paraíba",
+        "value": "PB"
+      },
+      {
+        "name": "Paraná",
+        "value": "PR"
+      },
+      {
+        "name": "Pernambuco",
+        "value": "PE"
+      },
+      {
+        "name": "Piauí",
+        "value": "PI"
+      },
+      {
+        "name": "Rio de Janeiro",
+        "value": "RJ"
+      },
+      {
+        "name": "Rio Grande do Norte",
+        "value": "RN"
+      },
+      {
+        "name": "Rio Grande do Sul",
+        "value": "RS"
+      },
+      {
+        "name": "Rondônia",
+        "value": "RO"
+      },
+      {
+        "name": "Roraima",
+        "value": "RR"
+      },
+      {
+        "name": "Santa Catarina",
+        "value": "SC"
+      },
+      {
+        "name": "São Paulo",
+        "value": "SP"
+      },
+      {
+        "name": "Sergipe",
+        "value": "SE"
+      },
+      {
+        "name": "Tocantins",
+        "value": "TO"
+      }
+    ],
+    "edu": [{
+      "name": "Ensino fundamental",
+      "value": "1"
+    },
+      {
+        "name": "Ensino médio",
+        "value": "2"
+      },
+      {
+        "name": "Ensino superior(Universidade tradicional)",
+        "value": "3"
+      },
+      {
+        "name": "Ensino superior(Universidade de ensino profissional)",
+        "value": "4"
+      },
+      {
+        "name": "Ensino superior(Universidade aberta)",
+        "value": "5"
+      },
+      {
+        "name": "Mestrado",
+        "value": "6"
+      },
+      {
+        "name": "Doutorado",
+        "value": "7"
+      }
+    ],
+    "marry": [{
+      "name": "Solteiro/a",
+      "value": "1"
+    },
+      {
+        "name": "Casado/a",
+        "value": "2"
+      },
+      {
+        "name": "Divorciado/a",
+        "value": "3"
+      }
+    ],
+    "well": [{
+      "name": "1 ano",
+      "value": "1"
+    },
+      {
+        "name": "2 anos",
+        "value": "2"
+      },
+      {
+        "name": "3 anos e superior",
+        "value": "3"
+      }
+    ],
+    "socialRole": [
+      {
+        "name": "Aposentado com aposentadoria",
+        "value": "1"
+      },
+      {
+        "name": "Aposentado sem pensão",
+        "value": "2"
+      },
+      {
+        "name": "Profissão liberal",
+        "value": "3"
+      },
+      {
+        "name": "Dona de casa",
+        "value": "4"
+      },
+      {
+        "name": "Funcionário CLT",
+        "value": "5"
+      },
+      {
+        "name": "Empresário",
+        "value": "7"
+      },
+      {
+        "name": "Estudante",
+        "value": "8"
+      },
+      {
+        "name": "Cargos públicos",
+        "value": "9"
+      }
+    ],
+    "income": [{
+      "name": "Sem trabalho sem pensão",
+      "value": "1"
+    },
+      {
+        "name": "Sem trabalho com pensão",
+        "value": "2"
+      },
+      {
+        "name": "Trabalho a tempo inteiro",
+        "value": "3"
+      },
+      {
+        "name": "Trabalho a tempo parcial",
+        "value": "4"
+      },
+      {
+        "name": "Auto-emprego",
+        "value": "5"
+      },
+      {
+        "name": "Outra fonte da renda",
+        "value": "6"
+      }
+    ],
+    "incomeType": [{
+      "name": "Dinheiro à vista",
+      "value": "1"
+    },
+      {
+        "name": "Transferência bancária",
+        "value": "2"
+      },
+      {
+        "name": "Cheque",
+        "value": "3"
+      }
+    ],
+    "relation": [{
+      "name": "Pai",
+      "value": "1"
+    },
+      {
+        "name": "Mãe",
+        "value": "2"
+      },
+      {
+        "name": "Cônjuge",
+        "value": "3"
+      },
+      {
+        "name": "Filho/a",
+        "value": "4"
+      },
+      {
+        "name": "Colega",
+        "value": "5"
+      },
+      {
+        "name": "Amigo/a",
+        "value": "6"
+      },
+      {
+        "name": "Familiar",
+        "value": "7"
+      }
+    ],
+    "accountType": [{
+      "name": "Conta corrente",
+      "value": "1"
+    }
+    ]
+  },
+  "forget": {
+    "userPass": {
+      "raw": "Insira senha original",
+      "now": "Insira senha nova",
+      "again": "Insira novamente senha nova",
+      "forget": "Esquecer senha de login"
+    },
+    "payPass": {
+      "raw": "Insira senha original",
+      "now": "Insira senha nova",
+      "again": "Insira novamente senha nova",
+      "forget": "esquecer senha"
+    }
+  },
+  "orderDetail": {
+    "title": "Detalhes da ordem",
+    "order": "Número da ordem",
+    "status": "Estado da ordem",
+    "amount": "Valor do empréstimo",
+    "limit": "Prazo do empréstimo",
+    "loanDate": "Data do empréstimo",
+    "repayDate": "Data de pagamento",
+    "rate": "Taxa de juros diária",
+    "IVA": "Multa",
+    "sholudPay": "Valor a ser pago",
+    "realPay": "Pagamento real",
+    "lookQr": "Ver o código do boleto",
+    "iof": "IOF",
+    "award": "Cupom",
+    "moneyRate": "Juros do empréstimo"
+  },
+  "feedback":{
+    "title":"Feedback de experiência",
+    "prompt":"Sua opinião é a nossa meta de melhoria!",
+    "input":"Escreva sua opinião",
+    "lable1":"Sua opinião- Obrigatório",
+    "textarea":"Escreva sua opinião",
+    "lable2":"Adicionar imagem (Captura do problema)",
+    "lable":"-Opcional",
+    "add":"Upload imagem",
+    "button":"Enviar",
+    "success":"Sucesso de enviar",
+    "fail":"Falha ao enviar"
+
+  }
+}

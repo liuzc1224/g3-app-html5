@@ -1,0 +1,51 @@
+<common-header [centerTxt]="'confirm.title' | translate"></common-header>
+<ion-content style="background:rgba(245,245,245,1);">
+  <div class="stage_order_detail">
+    <div class="stage-box" *ngIf="listData">
+      <ul>
+        <li>
+          <label>Número de proposta</label>
+          <p>{{ result.orderNo}}</p>
+        </li>
+        <li>
+          <label>Parcela</label>
+          <p>
+            {{ result.currentPeriod}}º/ {{ result.totalPeriod}} parcelas
+          </p>
+        </li>
+        <li>
+          <label>Status</label>
+          <p>{{ result.repayStatusTxt}}</p>
+        </li>
+        <li>
+          <label>Data de vencimento</label>
+          <p>{{ result.planRepaymentDateStr}}</p>
+        </li>
+        <li>
+          <label>Valor a ser pago</label>
+          <p>{{ result.currentRepay}}</p>
+        </li>
+        <li class="currRepayinner">
+          <label>Valor financiado(R$)</label>
+          <p>{{ result.financingAmount}}</p>
+        </li>
+        <li class="currRepayinner">
+          <label>Juros(R$)</label>
+          <p>{{ result.lendRateMoney}}</p>
+        </li>
+        <li class="currRepayinner">
+          <label>Despesas de atraso(R$)</label>
+          <p>{{ result.overDueFine}}</p>
+        </li>
+        <li>
+          <label>Valor pago</label>
+          <p>{{ result.realRepayMoney}}</p>
+        </li>
+        <li>
+          <label>Data de quitação</label>
+          <p>{{ result.settleDateStr }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,110 @@
+page-account-confirm {
+
+}
+.account_confirm_wrap{
+  margin: .291667rem ;
+  background: #fff;
+  padding: .597222rem ;
+  border-radius: .138889rem ;
+  font-size: .388889rem ;
+  border: 1px solid rgba(204,204,204,.5);
+}
+.account_confirm_list{
+  margin: .291667rem ;
+  background: #fff;
+  border-radius: .138889rem ;
+  font-size: .388889rem ;
+  overflow: hidden;
+  border: 1px solid rgba(204,204,204,.5);
+}
+.confirm_shadow{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+  display: flex;
+}
+.confirm_box{
+  width: 7.388889rem ;
+  height : 4rem;
+  background:rgba(245,245,245,1);
+  border-radius:.277778rem;
+  position: absolute;
+}
+.confirmBtn{
+  height: 1.388889rem ;
+  width: 100% ;
+  border-top: 1px solid #ccc;
+}
+.confirmText{
+  font-size:.416667rem;
+  color:rgba(51,51,51,1);
+  height: 2.611111rem ;
+  text-align: center ;
+}
+.confirmBtn>div{
+  width: 50% ;
+  height: 100%;
+  font-size:.416667rem;
+  line-height:1.388889rem ;
+  text-align: center;
+}
+.confirmBtn>div:nth-of-type(1){
+  color:rgba(170,170,170,1);
+  border-radius:0 0 0 .277778rem;
+}
+.confirmBtn>div:nth-of-type(2){
+  color:rgba(245,245,245,1);
+  background:rgba(0,180,239,1);
+  border-radius:0 0 .277778rem 0;
+}
+.padWrap{
+  width: 100% ;
+  height: 100% !important;
+  position: absolute;
+  top:0px;
+  left:0px;
+  z-index: 99 ;
+  background: rgba(0,0,0,.52) ;
+}
+
+.icoDefault{
+  background: url('../assets/imgs/regist/check.png') center ;
+  background-size: contain;
+}
+
+.icoActive{
+  background: url('../assets/imgs/regist/checked.png') center ;
+  background-size: contain;
+}
+
+.marTop{
+  margin-top: .263889rem;
+  line-height: .555556rem;
+}
+.account-item{
+  height: 1.238889rem;
+  line-height: 1.238889rem;
+  border-bottom: 1px solid rgba(204,204,204,.5);
+  padding: 0 .333333rem;
+}
+.selectBlue{
+  color: #00B4EF;
+}
+$item-ios-body-text-font-size: .763889rem;
+.account_confirm_wrap .item-block{
+  min-height: 0;
+}
+.account_confirm_wrap .item-ios{
+  font-size:  .763889rem;
+}
+.item-ios.item-block .item-inner{
+  border: none;
+}
+.account_confirm_wrap .text-input-ios{
+  margin-bottom: 0 !important;
+  padding-right: 0;
+}

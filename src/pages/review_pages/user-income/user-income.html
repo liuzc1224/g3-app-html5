@@ -1,0 +1,307 @@
+<common-header
+    [centerTxt]='"review.steps.income" | translate'
+    [leftFn]='back'
+    [parent]='parent'
+    ></common-header>
+
+<ion-content>
+    <div class="c-flex-column-start">
+        <div class="process-bar-wrap c-flex-row-center c-background">
+            <ul class="process-list c-flex-row-space">
+                <li class="lineAfter activeAfter" (click)='slideTo("LoanPurposePage" , 0)'>
+                    <div class="step-text">
+                        1
+                    </div>
+                </li>
+                <li class="lineAfter activeAfter lineBefore activeBefore" (click)='slideTo("CpfPage" , 1)'>
+                    <div class="step-text">
+                        2
+                    </div>
+                </li>
+                <li class="lineAfter lineBefore activeAfter lineBefore activeBefore" (click)='slideTo("UserAuthPage" , 2)'>
+                    <div class="step-text">
+                        3
+                    </div>
+                </li>
+                <li class="lineAfter lineBefore activeAfter lineBefore activeBefore" (click)='slideTo("UserInfoPage" ,3)'>
+                    <div class="step-text">
+                        4
+                    </div>
+                </li>
+                <li class="lineAfter lineBefore activeAfter lineBefore activeBefore" (click)='slideTo(false ,4)'>
+                    <div class="step-text">
+                        5
+                    </div>
+                </li>
+                <li class="lineBefore">
+                    <div class="step-text">
+                        6
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="spinner_tip" *ngIf = '!resMark'>
+        </div>
+
+        <div *ngIf = 'resMark'>
+            <div class="c-flex-row-allStart" style="padding: 0 .569444rem">
+                <ion-icon name="information-circle" class="cpf_icon"></ion-icon>
+                <span class="cpf_content">
+                {{ "review.income.title" | translate }}
+            </span>
+            </div>
+
+            <form [formGroup]="validForm" class="c-form-wrap" style="margin-top: .722222rem">
+
+                <!-- 社会身份 -->
+                <div class="c-input-group">
+                    <div class="c-input-title c-required">
+                        {{ "review.income.input.socialIdentityCode" | translate }}
+                    </div>
+
+                    <div style="position: relative;height: 1.388889rem;">
+                        <ion-select
+                                formControlName='socialIdentityCode'
+                                class="c-form-input"
+                                style="line-height: calc(1.277778rem - 22px)"
+                                [cancelText]='"oper.cancel" | translate'
+                                [okText]='"oper.sure" | translate'
+                                [placeholder] = ' "oper.chose" | translate '
+                                (click) = 'makeRecord("socialIdentity")'
+                        >
+                            <ion-option *ngFor='let item of enum_socialRole' [value]='item.value'>
+                                {{ item.name }}
+                            </ion-option>
+                        </ion-select>
+
+                        <div style="opacity: 0 ;z-index:99;margin-bottom: .416667rem;position: absolute;top:0px;left:0px;width: 100% ; height: 100%"
+                             (click)="showModel('enum_socialRole' , 'socialIdentityCode', 'socialIdentity')">
+                            <input
+                                    type="text"
+                                    class="c-input-item userInfo_section_gap"
+                                    [placeholder] = ' "oper.chose" | translate '
+                                    id = 'socialIdentityCode'
+                                    readonly="true"
+                            >
+                            <ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 收入来源 -->
+                <div class="c-input-group">
+                    <div class="c-input-title c-required">
+                        {{ "review.income.input.incomTitle" | translate }}
+                    </div>
+
+
+                    <div style="position: relative;height: 1.388889rem;">
+                        <ion-select
+                                formControlName='incomeSourceCode'
+                                class="c-form-input userInfo_section_gap"
+                                style="line-height: calc(1.277778rem - 22px)"
+                                [cancelText]='"oper.cancel" | translate'
+                                [okText]='"oper.sure" | translate'
+                                [placeholder] = ' "oper.chose" | translate '
+                                (click) = 'makeRecord("incomeSource")'
+                        >
+                            <ion-option *ngFor='let item of enum_income' [value]='item.value'>
+                                {{ item.name }}
+                            </ion-option>
+                        </ion-select>
+
+                        <div style="opacity: 0 ;z-index:99;position: absolute;top:0px;left:0px;width: 100% ; height: 100%"
+                             (click)="showModel('enum_income' , 'incomeSourceCode', 'incomeSource')">
+                            <input
+                                    type="text"
+                                    class="c-input-item userInfo_section_gap"
+                                    [placeholder] = ' "oper.chose" | translate '
+                                    id = 'incomeSourceCode'
+                                    readonly="true"
+                            >
+                            <ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!--<div style="position: relative;" (click)="showModel('enum_income' , 'incomeSourceCode')">-->
+                    <!--<input-->
+                    <!--type="text"-->
+                    <!--class="c-input-item userInfo_section_gap"-->
+                    <!--[placeholder] = ' "oper.chose" | translate '-->
+                    <!--id = 'incomeSourceCode'-->
+                    <!--readonly="true"-->
+                    <!--&gt;-->
+                    <!--<ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>-->
+                    <!--</div>-->
+
+                    <!--<ion-select-->
+                    <!--formControlName='incomeSourceCode'-->
+                    <!--class="c-form-input userInfo_section_gap"-->
+                    <!--style="line-height: calc(1.277778rem - 22px)"-->
+                    <!--[cancelText]='"oper.cancel" | translate'-->
+                    <!--[okText]='"oper.sure" | translate'-->
+                    <!--[placeholder] = ' "oper.chose" | translate '-->
+                    <!--&gt;-->
+                    <!--<ion-option *ngFor='let item of enum_income' [value]='item.value'>-->
+                    <!--{{ item.name }}-->
+                    <!--</ion-option>-->
+                    <!--</ion-select>-->
+                    <input
+                            type="text"
+                            class="c-input-item userInfo_section_gap"
+                            [placeholder] = ' "review.income.placeHolder.otherIncomeSource" | translate '
+                            formControlName = 'otherIncomeSource'
+                            style="margin-top: .416667rem"
+                            (focus)= 'makeRecord("otherIncomeSource")'
+                    >
+                </div>
+
+                <!-- 月收入 -->
+                <div class="c-input-group">
+                    <div class="c-input-title c-required">
+                        {{ "review.income.input.monthlyIncome" | translate }}
+                    </div>
+                    <input
+                            type="tel"
+                            class="c-input-item userInfo_section_gap"
+                            [placeholder] = ' "oper.input" | translate '
+                            formControlName = 'monthlyIncome'
+                            (focus)= 'makeRecord("monthlyIncome")'
+                    >
+                </div>
+
+                <!-- 月收入 -->
+                <div class="c-input-group">
+                    <div class="c-input-title c-required">
+                        {{ "review.income.input.payrollPaymentTypeCode" | translate }}
+                    </div>
+
+                    <div style="position: relative;height: 1.388889rem;">
+                        <ion-select
+                                formControlName='payrollPaymentTypeCode'
+                                class="c-form-input userInfo_section_gap"
+                                style="line-height: calc(1.277778rem - 22px)"
+                                [cancelText]='"oper.cancel" | translate'
+                                [okText]='"oper.sure" | translate'
+                                [placeholder] = ' "oper.chose" | translate '
+                                (click)= 'makeRecord("payrollPaymentType")'
+                        >
+                            <ion-option *ngFor='let item of enum_incomeType' [value]='item.value'>
+                                {{ item.name }}
+                            </ion-option>
+                        </ion-select>
+
+                        <div style="opacity: 0 ;z-index:99;position: absolute;top:0px;left:0px;width: 100% ; height: 100%"
+                             (click)="showModel('enum_incomeType' , 'payrollPaymentTypeCode', 'payrollPaymentType')">
+                            <input
+                                    type="text"
+                                    class="c-input-item userInfo_section_gap"
+                                    [placeholder] = ' "oper.chose" | translate '
+                                    id = 'payrollPaymentTypeCode'
+                                    readonly="true"
+                            >
+                            <ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!--<div style="position: relative;" (click)="showModel('enum_incomeType' , 'payrollPaymentTypeCode')">-->
+                    <!--<input-->
+                    <!--type="text"-->
+                    <!--class="c-input-item userInfo_section_gap"-->
+                    <!--[placeholder] = ' "oper.chose" | translate '-->
+                    <!--id = 'payrollPaymentTypeCode'-->
+                    <!--readonly="true"-->
+                    <!--&gt;-->
+                    <!--<ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>-->
+                    <!--</div>-->
+
+                    <!--<ion-select-->
+                    <!--formControlName='payrollPaymentTypeCode'-->
+                    <!--class="c-form-input userInfo_section_gap"-->
+                    <!--style="line-height: calc(1.277778rem - 22px)"-->
+                    <!--[cancelText]='"oper.cancel" | translate'-->
+                    <!--[okText]='"oper.sure" | translate'-->
+                    <!--[placeholder] = ' "oper.chose" | translate '-->
+                    <!--&gt;-->
+                    <!--<ion-option *ngFor='let item of enum_incomeType' [value]='item.value'>-->
+                    <!--{{ item.name }}-->
+                    <!--</ion-option>-->
+                    <!--</ion-select>-->
+                </div>
+
+                <!-- 薪资日 -->
+                <div class="c-input-group">
+                    <div class="c-input-title c-required">
+                        {{ "review.income.input.payrollPaymentDate" | translate }}
+                    </div>
+
+
+                    <div style="position: relative;height: 1.388889rem;">
+                        <ion-select
+                                formControlName='payrollPaymentDate'
+                                class="c-form-input userInfo_section_gap"
+                                style="line-height: calc(1.277778rem - 22px)"
+                                [cancelText]='"oper.cancel" | translate'
+                                [okText]='"oper.sure" | translate'
+                                [placeholder] = ' "oper.chose" | translate '
+                                (click)= 'makeRecord("payrollPaymentDate")'
+                        >
+                            <ion-option *ngFor='let item of enum_payDate' [value]='item.value'>
+                                {{ item.name }}
+                            </ion-option>
+                        </ion-select>
+
+                        <div style="opacity: 0 ;z-index:99;position: absolute;top:0px;left:0px;width: 100% ; height: 100%"
+                             (click)="showModel('enum_payDate' , 'payrollPaymentDate', 'payrollPaymentDate')">
+                            <input
+                                    type="text"
+                                    class="c-input-item userInfo_section_gap"
+                                    [placeholder] = ' "oper.chose" | translate '
+                                    id = 'payrollPaymentDate'
+                                    readonly="true"
+                            >
+                            <ion-icon ios="md-arrow-dropdown" md="md-arrow-dropdown" class="userInfo_icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-input-group">
+                    <div class="c-input-title c-required" style="margin-bottom: .263889rem">
+                        {{ "review.income.input.incomeProof.title" | translate }}
+                    </div>
+                    <div class="income_small">
+                        {{ "review.income.input.incomeProof.explain" | translate }}
+                    </div>
+
+                    <div class="income_proof"
+                         (click) ='takeCam("incomeProof")'
+                         [ngClass] = '{"incomCam_ico" : postData.get("incomeProof") == null && imgLoads.incomeProof.hasOwn == false }'
+                    >
+                        <ion-spinner
+                                item-start=""
+                                name="bubbles"
+                                class="spinner spinner-ios spinner-bubbles spinner-ios-bubbles img_load_shadow"
+                                [hidden] = 'imgLoads.incomeProof.hasOwn == false || imgLoads.incomeProof.hasOwn == true && imgLoads.incomeProof.loadComplete == true '
+                                style="top: 60%;"
+                        >
+                        </ion-spinner>
+                        <img
+                                [src] = 'incomeProof'
+                                alt=""
+                                [hidden]="imgLoads.incomeProof.hasOwn != false  && imgLoads.incomeProof.loadComplete != true "
+                                (load)="imgLoadComplete()"
+                                style="display: block;max-height: 2.5rem;"
+                        >
+                    </div>
+                </div>
+            </form>
+            <div class="preview_btnWrap" >
+                <button class="c-color-blue button" (click) = 'nextBtn($event)' [disabled]='!validForm.valid || (incomeFlag && validForm.value.isFirst &&  !postData.get("incomeProof")) ' >
+                    {{ "oper.next"  | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</ion-content>

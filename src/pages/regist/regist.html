@@ -1,0 +1,102 @@
+<ion-header>
+    <div class="c-header">
+        <i class="c-back-arrow" (click) = 'back()'></i>
+        {{ "register.regist" | translate }}
+    </div>
+</ion-header>
+
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+    <div class="formWrap">
+        <form [formGroup]="validForm">
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_left c-flex-row-center">
+                    <img src="../../assets/imgs/regist/phone.png" class="regist_icon">
+                </div>
+                <div class="regist_right regist_border">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "phone"
+                            [placeholder] = ' "register.placeholder.phone" | translate'
+                            type="tel"
+                            maxlength="11"
+                            (ionFocus)="makeRecord('phoneNumber')"
+                    >
+                    </ion-input>
+                </div>
+            </div>
+
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_left c-flex-row-center">
+                    <img src="../../assets/imgs/regist/mail.png" class="regist_icon" style="width: .555556rem ; height: .430556rem;">
+                </div>
+                <div class="regist_right regist_border">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "mail"
+                            [placeholder] = ' "register.placeholder.mail" | translate'
+                            (ionFocus)="makeRecord('email')"
+                    >
+                    </ion-input>
+                </div>
+            </div>
+
+            <div class="regist_formGroup c-flex-row-center">
+                <div class="regist_left c-flex-row-center">
+                    <img src="../../assets/imgs/regist/cpf.png" class="regist_icon" style="width: .555556rem ; height: .430556rem;">
+                </div>
+                <div class="regist_right">
+                    <ion-input
+                            class="regist_input"
+                            formControlName = "cpf"
+                            type="tel"
+                            maxlength="11"
+                            [placeholder] = ' "register.placeholder.cpf" | translate'
+                            (ionFocus)="makeRecord('cpf')"
+                    >
+
+                    </ion-input>
+                    <img src="../../assets/imgs/regist/cross.png" class="regist_cross" alt="">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="regist_wrap">
+        <div class="regist_access c-flex-row-start">
+            <div class="regist_access_left">
+                <div
+                        class='regist_checkbox'
+                        [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }'
+                        (click) = 'access() '
+                >
+                </div>
+                <!-- <ion-icon class='regist_checkbox' name="ios-checkbox" [ngClass] = '{"icoActive" : first == true , "icoDefault" : first == false }' ></ion-icon> -->
+            </div>
+            <div class="regist_access_right">
+                {{ ("register.access" | translate)[0]}}
+                <span (click)="showLoad('RegProtocol')" style="text-decoration: underline;">{{ ("register.access" | translate)[1]}}</span>
+                 e
+                <span (click)="showLoad('RegProtocolTwo')" style="text-decoration: underline;">{{ ("register.access" | translate)[2]}}</span>
+                {{ ("register.access" | translate)[3]}}
+            </div>
+        </div>
+        <button
+                [disabled]="!validForm.valid || first == false"
+                class="c-color-blue button"
+                (click) = 'postCode($event)'
+                style="margin-top:.694444rem"
+        >
+            {{ "register.regist"  | translate}}
+        </button>
+
+        <div class="regist" (click) = 'login()'>
+        <span>
+            {{ "register.hasAccount" | translate }},
+        </span>
+            <span>
+            {{ "register.login" | translate }}.
+        </span>
+        </div>
+    </div>
+
+</ion-content>

@@ -1,0 +1,28 @@
+
+<div class="audit_infoWrap">
+    <div class="audit_wrap">
+        <img src="./assets/imgs/home/auditing.png" alt="" class="audit_icon">
+        <div class="audit_text">
+            {{ "audit.tip" | translate }}
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%">
+            </div>
+        </div>
+        <div class="audit_wait">
+            {{ "audit.wait" | translate }}
+        </div>
+    </div>
+
+    <div class="audit_footer">
+        <img src="../../assets/imgs/side/service.png" alt="" class="audit_icon_footer">
+        <div class="audit_textWrap c-flex-column-center">
+      <span style="margin-bottom: 5px;">
+        {{ "audit.notYou" | translate }}
+      </span>
+            <span class="c-text-blue" (click)="transSevice()">
+          {{ "audit.contact" | translate }}
+      </span>
+        </div>
+    </div>
+</div>

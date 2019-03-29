@@ -1,0 +1,325 @@
+repay-qr {
+
+}
+.repay-qr-repayBox{
+    background:rgba(0,180,239,1);
+    padding:0 .763889rem;
+    overflow: hidden;
+    .repay-title{
+        padding:.458333rem 0 .555556rem;
+        overflow: hidden;
+        font-size:.416667rem;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        display: flex;
+        justify-content: space-between;
+        .repay-titleTxt{
+            display: none;
+            margin:0 auto;
+            text-align: center;
+        }
+        .repay-period{
+            float:left;
+        }
+        .repay-date{
+            float:right;
+        }
+    }
+    .money-number-box{
+        font-size:.666667rem;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        padding:0 0 .486111rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .money-number{
+            font-size:.666667rem;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+        }
+        .overdueflag{
+            width:1.666667rem;
+            height:.555556rem;
+            display: none;
+            line-height:.555556rem;
+            background:rgba(252,117,91,1);
+            border:.013889rem solid rgba(255,255,255,1);
+            border-radius:.277778rem;
+            font-size:.361111rem;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            margin:0 0 0 .347222rem;
+            text-align: center;
+            margin-top:-0.347222rem;
+        }
+    }
+    .repay-footer{
+        font-size:.333333rem;
+        font-weight:500;
+        color:rgba(255,255,255,0.8);
+        padding:0 .305556rem;
+        margin:0 0 .611111rem;
+        line-height:.347222rem;
+    }
+}
+.repayBox.allRepay{
+    .repay-title{
+        .repay-period{
+            display: none;
+        }
+        .repay-date{
+            display: none;
+        }
+        .repay-titleTxt{
+            display: block;
+        }
+    }
+   .money-number-box{
+        
+   } 
+}
+.repayBox.overDue{
+    .money-number-box{
+        .overdueflag{
+            display: inline-block;
+        }
+    }
+    .repay-title{
+        .repay-titleTxt{
+            display: none;
+        }
+    }
+}
+.repayQr_wrap{
+    padding: .555556rem ;
+}
+
+.repayQr_section{
+    font-size: .5rem ;
+    color:rgba(102,102,102,1);
+    line-height: .5rem ;
+}
+
+.repayQr_Block{
+    width: 100% ;
+    height: 4.166667rem ;
+    background: #fff; 
+    border-radius: .277778rem ;
+    margin-top: .402778rem ;
+    padding: .833333rem .555556rem .416667rem .555556rem
+}
+
+.repayQr_qr{
+    width: 100% ;
+    height: 2.055556rem ;
+    background: #ccc ;
+}
+
+.repayQr_magnify{
+    font-size: .388889rem;
+    color:rgba(190,190,190,1);
+    text-align: center ;
+    margin-top: .5rem ;
+}
+
+.repayQr_modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+    display: none ;
+}
+
+.repayQr_account{
+    margin-top: .555556rem ;
+    border-top: 1px solid rgba(224,224,224,1);
+    margin-left: .555556rem;
+    margin-right: .555556rem ;
+    padding-top: .555556rem ;
+}
+
+.repayQr_accountWrap{
+    margin-top: .430556rem ;
+    width: 100% ;
+    height: 1.944444rem ;
+    background: #fff; 
+    border-radius: .277778rem ;
+}
+
+.accountWrap-left{
+    width: 70%;
+    height: 100%;
+    display: flex ; 
+    flex-direction: column ; 
+    justify-content: center ; 
+    align-items: flex-start ;
+    padding-left: .541667rem ;
+    color:rgba(102,102,102,1);
+    line-height: .486111rem ;
+    font-size: .388889rem ;
+    position: relative;
+}
+
+.accountWrap-left::after{
+    content:  "" ; 
+    display: block ; 
+    width: 1px ; 
+    height: 1.111111rem;
+    background:rgba(224,224,224,1);
+    position: absolute;
+    right: 0px;
+}
+
+.accountWrap-right{
+    width: 30%;
+    height: 100%;
+    font-size: .5rem ;
+}
+#repayQr_img{
+  width: 568px;
+  height: 320px;
+  transform: rotate(90deg) translateY(-100%);
+  background-position: 100% !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 40% !important;
+  margin: 10px;
+}
+.border-box{
+    border-top: 1px solid #E0E0E0 ;
+    margin:.555556rem .555556rem 0;
+    padding:.555556rem 0;
+}
+.border-box .border-btn{
+    display: flex;
+    width:8.888889rem;
+    height:1.388889rem;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(224, 224, 224, 1);
+    border-radius:10px;
+    margin:0 auto .277778rem;
+    justify-content: space-between;
+    align-content: center;
+}
+.border-box .border-btn span{
+    display:flex;
+    align-items: center;
+}
+.border-box .border-btn span.btn-left{
+    padding-left:.555556rem;
+    font-size:.416667rem;
+    font-family:HKGrotesk-Medium;
+    font-weight:500;
+    color:rgba(102,102,102,1);}
+.border-box .border-btn span.btn-right{
+    margin:.277778rem .555556rem .277778rem .722222rem;
+    padding-left:.722222rem;
+    font-size:.5rem;
+    font-family:HKGrotesk-Medium;
+    font-weight:500;
+    color:rgba(0,180,239,1);
+    border-left:1px solid #E0E0E0;
+}
+.border-box .footer{
+    font-size:.361111rem;
+    font-family:HKGrotesk-Medium;
+    font-weight:500;
+    text-decoration:underline;
+    color:rgba(252,117,88,1);
+    margin:.763889rem auto 0;
+    text-align: center;
+}
+.copy-wrapper{
+    width:100%;
+    height:100%;
+    display: flex;
+    position:fixed;
+    top :0px;
+    left:0;
+    background:rgba(0,0,0,.5);
+    justify-content: center;
+    align-items: center;
+    .copy-success-box{
+        width:5.555556rem;
+        height:4.444444rem;
+        background:rgba(255,255,255,1);
+        border-radius:.138889rem;
+        z-index: 100;
+        .img-box{
+            width:1.972222rem;
+            height:1.972222rem;
+            display: block;
+            overflow: hidden;
+            margin:.833333rem auto .527778rem;
+            img{
+                display: block;
+            }
+        }
+        .copy-success-txt{
+            font-size:.444444rem;
+            font-family:HKGrotesk-Medium;
+            font-weight:500;
+            color:rgba(88,88,88,1);
+            display:block;
+            margin:.527778rem auto 0;
+            text-align: center;
+        }
+    }
+    .email-send-box{
+        width:8.055556rem;
+        height:6.99rem;
+        background:rgba(255,255,255,1);
+        border-radius:20px;
+        padding:0 .555556rem 0;
+        .email-send-title{
+            margin:.680556rem auto 0;
+            text-align: center;
+            font-size:.444444rem;
+            font-family:HKGrotesk-Medium;
+            font-weight:500;
+            color:rgba(88,88,88,1);
+        }
+        .input-label{
+            font-size:.444444rem;
+            font-family:HKGrotesk-Medium;
+            font-weight:500;
+            color:rgba(88,88,88,1);
+        }
+        .email-input{
+            width: 6.944444rem;
+            height:1.25rem;
+            background:rgba(255,255,255,1);
+            border:1px solid rgba(204, 204, 204, 1);
+            border-radius:.138889rem;
+            padding:.277778rem .291667rem;
+            font-size:.416667rem;
+            line-height:.416667rem;
+        }
+        .send-btn{
+            width:6.944444rem;
+            height:1.25rem;
+            background:rgba(77,170,112,1);
+            border-radius:.138889rem;
+            text-align: center;
+            font-size:.444444rem;
+            font-family:HKGrotesk-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            line-height: 1.25rem;
+            margin:.416667rem auto 0;
+        }
+        .cancel-btn{ 
+            margin:.277778rem auto .555556rem;
+            font-size:.444444rem;
+            font-family:HKGrotesk-Medium;
+            font-weight:500;
+            text-decoration:underline;
+            color:rgba(77,170,112,1);
+            line-height:.555556rem;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,187 @@
+<common-header
+  [centerTxt]="'review.steps.userAuth' | translate"
+  [leftFn]="back"
+  [parent]="parent"
+></common-header>
+<ion-content>
+  <div class="process-bar-wrap c-flex-row-center c-background">
+    <ul class="process-list c-flex-row-space">
+      <li class="lineAfter activeAfter" (click)="slideTo('LoanPurposePage', 0)">
+        <div class="step-text">1</div>
+      </li>
+      <li
+        class="lineAfter activeAfter lineBefore activeBefore"
+        (click)="slideTo('CpfPage', 1)"
+      >
+        <div class="step-text">2</div>
+      </li>
+      <li
+        class="lineAfter lineBefore lineBefore activeBefore"
+        (click)="slideTo(false, 2)"
+      >
+        <div class="step-text">3</div>
+      </li>
+      <li class="lineAfter lineBefore"><div class="step-text">4</div></li>
+      <li class="lineBefore lineAfter"><div class="step-text">5</div></li>
+      <li class="lineBefore"><div class="step-text">6</div></li>
+    </ul>
+  </div>
+
+  <div class="c-container" style="padding-bottom: 40px">
+    <div class="spinner_tip" *ngIf="!resMark"></div>
+
+    <div *ngIf="resMark">
+      <div class="usrAuth_imgWrap" *ngIf="postData">
+        <div class="usrAuth_Section" (click)="takeCam('front')">
+          <div class="usrAuth_top c-required">
+            {{ "review.auth.front" | translate }}
+          </div>
+          <div
+            class="usrAuth_bottom"
+            [ngClass]="{ authCam_ico: postData.get('front') == null }"
+          >
+            <ion-spinner
+              item-start=""
+              name="bubbles"
+              class="spinner spinner-ios spinner-bubbles spinner-ios-bubbles img_load_shadow"
+              [hidden]="
+                imgLoads.front.hasOwn == false ||
+                (imgLoads.front.hasOwn == true &&
+                  imgLoads.front.loadComplete == true)
+              "
+            >
+            </ion-spinner>
+            <img
+              [src]="front"
+              alt=""
+              [hidden]="
+                imgLoads.front.hasOwn != false &&
+                imgLoads.front.loadComplete != true
+              "
+              (load)="imgLoadComplete('front')"
+            />
+          </div>
+        </div>
+
+        <div class="usrAuth_Section" (click)="takeCam('reverse')">
+          <div class="usrAuth_top c-required">
+            {{ "review.auth.back" | translate }}
+          </div>
+          <div
+            class="usrAuth_bottom"
+            *ngIf="postData"
+            [ngClass]="{ authCam_ico: postData.get('reverse') == null }"
+          >
+            <ion-spinner
+              item-start=""
+              name="bubbles"
+              class="spinner spinner-ios spinner-bubbles spinner-ios-bubbles img_load_shadow"
+              [hidden]="
+                imgLoads.reverse.hasOwn == false ||
+                (imgLoads.reverse.hasOwn == true &&
+                  imgLoads.reverse.loadComplete == true)
+              "
+            >
+            </ion-spinner>
+            <img
+              [src]="reverse"
+              alt=""
+              [hidden]="
+                imgLoads.reverse.hasOwn != false &&
+                imgLoads.reverse.loadComplete != true
+              "
+              (load)="imgLoadComplete('reverse')"
+            />
+          </div>
+        </div>
+
+        <div class="usrAuth_Section" (click)="takeCam('hand')" *ngIf="this.faceFlag != 1">
+          <div class="usrAuth_top c-required">
+            {{ "review.auth.hand" | translate }}
+          </div>
+          <div
+            class="usrAuth_bottom"
+            *ngIf="postData"
+            [ngClass]="{ authCam_ico: postData.get('hand') == null }"
+          >
+            <ion-spinner
+              item-start=""
+              name="bubbles"
+              class="spinner spinner-ios spinner-bubbles spinner-ios-bubbles img_load_shadow"
+              [hidden]="
+                imgLoads.hand.hasOwn == false ||
+                (imgLoads.hand.hasOwn == true &&
+                  imgLoads.hand.loadComplete == true)
+              "
+            >
+            </ion-spinner>
+            <img
+              [src]="hand"
+              alt=""
+              [hidden]="
+                imgLoads.hand.hasOwn != false &&
+                imgLoads.hand.loadComplete != true
+              "
+              (load)="imgLoadComplete('hand')"
+            />
+          </div>
+          <div style="font-size: .333333rem ; color: #ccc;margin-top: 15px;">
+            Por favor, tire foto de cara inteira e as informações do RG ao mesmo
+            tempo
+          </div>
+        </div>
+      </div>
+      <!-- ion-fixed -->
+      <div class="usrAuth_form c-flex-column-start">
+        <form [formGroup]="validForm" class="c-form-wrap">
+          <!-- id card number -->
+          <div class="c-input-group">
+            <div class="c-input-title c-required">
+              {{ "review.auth.input.id" | translate }}
+            </div>
+            <input
+              type="tel"
+              class="c-input-item"
+              [placeholder]="'review.auth.placeHolder.id' | translate"
+              formControlName="idNumber"
+              (focus)="makeRecord('idNumber')"
+            />
+          </div>
+          <!-- user name  -->
+          <div class="c-input-group">
+            <div class="c-input-title c-required">
+              {{ "review.auth.input.name" | translate }}
+            </div>
+            <input
+              type="text"
+              class="c-input-item"
+              [placeholder]="'review.auth.placeHolder.name' | translate"
+              formControlName="username"
+              (focus)="makeRecord('username')"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="preview_btnWrap"
+        style="margin-top : .555556rem "
+        *ngIf="postData"
+      >
+        <button
+          class="c-color-blue button"
+          (click)="nextBtn($event)"
+          [disabled]="
+            !validForm.valid ||
+            (validForm.value.isFirst &&
+              (!postData.get('front') ||
+                !postData.get('reverse') ||
+                !postData.get('hand')))
+          "
+        >
+          {{ "oper.next" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+page-about-us {
+
+}
+.about_us_section{
+    background: #fff ;
+    font-size: .3rem ;
+    color:rgba(51,51,51,1);
+    padding: .375rem ;
+    margin: .361111rem ;
+    border-radius: .277778rem ;
+    line-height: .666667rem ;
+}
+.about_item{
+    position: relative;
+    display: flex ;
+    flex-direction: row ;
+    justify-content: flex-start ; 
+    align-items: flex-start ; 
+}
+
+.about_item_span{
+    width: .194444rem ; 
+    height:  .194444rem ;
+    background: #00b4ef ;
+    border-radius: 50% ;
+    display: block ;
+    margin-right: .444444rem ;
+    margin-top: 0.2361115rem ;
+}
+.about_us_pro{
+    padding: 0 .375rem ;
+    margin-top: .638889rem ;
+}
+.about_us_proSection{
+    margin-bottom: .638889rem ;
+}
+
+.aboutUsProIco{
+    display: block;
+    width:  1.111111rem ;
+    height :  1.111111rem ;
+}
+.about_us_proSection > div:nth-of-type(1){
+    width: 20% ;
+}
+.about_us_proSection > div:nth-of-type(2){
+    width: 80% ;
+}

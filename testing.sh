@@ -1,0 +1,1 @@
+export BUILD=testing && ionic build

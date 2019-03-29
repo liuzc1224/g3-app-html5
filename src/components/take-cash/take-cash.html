@@ -1,0 +1,33 @@
+<div class="audit_infoWrap">
+    <div class="audit_wrap">
+        <img src="./assets/imgs/home/cash.png" alt="" class="audit_icon">
+
+        <div class="loan_text_group c-flex-column-center">
+            <span style="padding: 0 2.041667rem;text-align: center;font-size: .322222rem;">
+                {{ "cash.title" | translate }}
+            </span>
+            <span *ngIf = 'orderInfo' class="takeCash_money">
+                R${{ orderInfo.auditMoney }}
+            </span>
+        </div>
+
+        <div class="c-color-blue refuse_footer" (click) = 'takeCash($event)'>
+            {{ "cash.order" | translate }}
+        </div>
+    </div>
+
+    <div class="audit_footer" style="margin-top: 2.5rem;">
+        <img src="../../assets/imgs/side/service.png" alt="" class="audit_icon_footer">
+        <div class="audit_textWrap c-flex-column-center">
+      <span style="margin-bottom: 5px;">
+        {{ "audit.notYou" | translate }}
+      </span>
+            <span class="c-text-blue" (click)="transSevice()">
+          {{ "audit.contact" | translate }}
+      </span>
+        </div>
+    </div>
+    <!--<footer-service>-->
+
+    <!--</footer-service>-->
+</div>

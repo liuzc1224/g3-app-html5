@@ -1,0 +1,21 @@
+<common-header [centerTxt]='"Descrição do cupom"'></common-header>
+
+
+<ion-content>
+  <div class="rewardDetailWrap">
+    <p class="rewardDetaiTitle">Cupom apenas para a conta {{userInfo && userInfo.phoneNumber}} usar</p>
+    <div class="c-flex-row-align-start detailBox">
+      <div class="rewardDetaiL">
+        <p>
+          {{info['couponName']}}
+        </p>
+        <span style="line-height:.45rem;">{{info['conditionsToString']}}<br>{{info['valueToString']}}</span>
+        <span>Válido:{{ info['endDate'] && info['endDate'].replace(regx,'/') }}</span>
+      </div>
+      <div class="rewardDetaiR">Cupom de redução de juros</div>
+    </div>
+  </div>
+  <div class="couponDescription">
+    {{ info['couponDescription'] }}
+  </div>
+</ion-content>

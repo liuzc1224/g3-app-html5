@@ -1,0 +1,80 @@
+
+<div class="audit_infoWrap">
+    <div class="audit_wrap" style="padding-top: .833333rem">
+        <div class="audit_text" style="padding: 0px">
+          <span>
+              {{ "repay.head" | translate }}
+
+          </span>
+            <span class="c-text-blue" *ngIf = 'orderInfo'>
+              {{ orderInfo.loanEndDays <= -1 ? "0" : orderInfo.loanEndDays }}
+          </span>
+            <span>
+              {{ "repay.foot" | translate }}
+          </span>
+        </div>
+
+        <div class="audit_text" style="padding:.513889rem;">
+          <span class="repay_text">
+            {{ "repay.first" | translate }}
+          </span>
+            <span class="repay_text">
+            {{ "repay.sec" | translate }}
+          </span>
+
+            <span *ngIf = 'orderInfo'>
+                {{ orderInfo.repayTime  | DatePipe }}.
+            </span>
+
+            <span class="repay_text">
+            <span>
+                {{ "repay.third_head" | translate }}
+            </span>
+            <span>
+              {{ orderDueRate }}%
+            </span>
+            <span>
+                {{ "repay.third_foot" | translate }}
+            </span>            
+          </span>
+
+            <span class="repay_text">
+              {{ "repay.fouth" | translate }}
+          </span>
+
+        </div>
+
+        <div class="repay_mount c-text-blue" *ngIf = 'orderInfo'>
+            {{ orderInfo.currentRepay | MoneyFormatPipe }}
+        </div>
+        <div class="audit_text c-flex-column-center" style="margin-top: .263889rem">
+            {{ "repay.unit" | translate }}
+        </div>
+        <!-- <img src="../../assets/imgs/home/refuse.png" alt="" class="audit_icon">
+        <div class="audit_text" style="padding: 0px">
+          {{ "refuse.first" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+          {{ "refuse.sec" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+          {{ "refuse.third" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+          {{ "refuse.fourth" | translate }}
+        </div>
+        <div class="audit_text" style="padding: 0px">
+          {{ "refuse.fifth" | translate }}
+        </div>
+        <div class="refuse_footer">
+          {{ "refuse.reapply" | translate}}
+        </div> -->
+        <div class="refuse_footer c-color-yellow" (click)="goToDetail()">
+            {{ "repay.order" | translate}}
+        </div>
+    </div>
+
+    <footer-service>
+
+    </footer-service>
+</div>

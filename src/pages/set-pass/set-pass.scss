@@ -1,0 +1,69 @@
+page-set-pass {
+
+}
+.setPass_title{
+    margin-top: .416667rem ;
+    font-size: .444444rem  ;
+    color:rgba(51,51,51,1);
+    padding: 0 .333333rem ;
+    text-align: center
+}
+.setPass_repost{
+    margin-top: .291667rem ; 
+    text-align: center ;
+    color:rgba(0,180,239,1);
+    font-size: .444444rem ;
+}
+.setPass_inputWrap{
+    position: relative;
+    width: 100% ;
+    margin-top: .847222rem ;
+    height: 40px;
+}
+#setPass{
+    width: 100% ; 
+    opacity:  0 ;
+    z-index: 99 ;
+}
+.setPass_text{
+    width: 1.111111rem ;   
+    border-bottom : 4px solid rgba(224,224,224,1);
+    color:rgba(51,51,51,1);
+    font-size: .666667rem ;
+    text-align: center;
+    padding-bottom: .263889rem ;
+    font-weight: bold ;
+    line-height: .555556rem;
+    height: .555556rem;
+    display: block;
+    box-sizing: content-box;
+}
+
+.setPass_gap{
+    margin-right: .555556rem;
+}
+.setPass_textWrap , 
+#setPass{
+    position: absolute;
+    top:0px;
+    left: 0px ; 
+    width: 100% ; 
+    height: 40px;
+}
+.setPass_passInputWrap{
+    width: 100% ; 
+    margin-top: .791667rem ;
+}
+.setPass_input{
+    width: 100% ;
+    border: 0px ; 
+    font-size: .444444rem ;
+    color:rgba(152,152,152,1);
+    border-bottom :1px solid rgba(224,224,224,1);
+    padding-bottom: .361111rem ;
+}
+.setPass_smallText{
+    font-size: .333333rem ; 
+    color:rgba(204,204,204,1);
+    margin-top: .152778rem ;
+}

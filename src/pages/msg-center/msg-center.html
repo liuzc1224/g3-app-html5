@@ -1,0 +1,29 @@
+<common-header [centerTxt]='"msgCenter.title" | translate'></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+    <div class="spinner_tip" *ngIf = 'isLoading'>
+    </div>
+
+    <div class="c-null-value" *ngIf = 'msgList && msgList.length == 0'>
+        {{ "tip.valueEmpty" | translate }}
+    </div>
+
+    <div class="orderList_wrap">
+        <ul class="c-list-unstyled">
+            <li class="orderList_item msgCenter_item" *ngFor="let item of msgList">
+                <div class="msgCenter_title">
+                    {{ item.title }}
+                </div>
+                <div
+                        class="msgCenter_content"
+                        style="margin-bottom: .416667rem"
+                        [innerHTML] = 'item.text'
+                >
+                </div>
+                <div class="msgCenter_content">
+                    {{ item.createTime | DatePipe }}
+                </div>
+            </li>
+        </ul>
+    </div>
+</ion-content>

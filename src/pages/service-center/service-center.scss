@@ -1,0 +1,43 @@
+page-service-center {
+
+}
+.service_header{
+  width: 100% ;
+  height: 2.277778rem;
+  background:rgba(0,180,239,1);
+}
+
+.service_icon{
+  width: 1.111111rem ; 
+  height: 1.111111rem;
+  display: block ;
+}
+
+.service_left ,
+.service_right{
+  width: 50% ;
+  position: relative;
+}
+
+.service_text{
+  font-size: .361111rem ;
+  color:rgba(255,255,255,1);
+  display: block ; 
+  margin-top: .111111rem ;
+}
+
+.service_left::after{
+  content:  "" ; 
+  width: 1px; 
+  height:1.138889rem ; 
+  position: absolute;
+  right: 0px;
+  top:50%;
+  display: block ; 
+  background:rgba(255,255,255,1);
+  margin-top: -.569444rem;
+}
+
+.flexAnchor{
+  text-decoration: none ;
+}

@@ -1,0 +1,47 @@
+<common-header [centerTxt]="'orderList.title' | translate"></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+  <div class="spinner_tip" *ngIf="!orderList"></div>
+
+  <div class="c-null-value" *ngIf="orderList && orderList.length == 0">
+    {{ "tip.valueEmpty" | translate }}
+  </div>
+
+  <ion-list class="orderList_wrap">
+    <ion-item
+      class="orderList_item"
+      *ngFor="let item of orderList"
+      (click)="goToDetail(item.orderId)"
+    >
+      <div class="orderList_first c-flex-row-space">
+        <div class="orderList_title">{{ "orderList.time" | translate }}:</div>
+        <div class="orderList_content">
+          {{ item.orderCreateTime | DatePipe }}
+        </div>
+      </div>
+
+      <div class="orderList_block c-flex-row-space">
+        <div class="orderList_title">{{ "orderList.status" | translate }}:</div>
+        <div class="orderList_content">{{ item.status | OrderStatusPipe }}</div>
+      </div>
+      <!--
+      <div class="orderList_block c-flex-row-space">
+        <div class="orderList_title">{{ "orderList.status" | translate }}:</div>
+        <div class="orderList_content">{{ item.orderType ===1 ? "分期还款" : "一次新还本付息" }}</div>
+      </div> -->
+
+      <div class="orderList_block c-flex-row-space">
+        <div class="orderList_title">{{ "orderList.amount" | translate }}:</div>
+        <div class="orderList_content">R$ {{ item.auditMoney }}</div>
+      </div>
+
+      <div class="orderList_block c-flex-row-space">
+        <div class="orderList_title">{{ "orderList.limit" | translate }}:</div>
+        <div class="orderList_content">{{ item.loanDays }} Dias</div>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

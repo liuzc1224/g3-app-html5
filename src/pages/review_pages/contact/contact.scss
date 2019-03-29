@@ -1,0 +1,19 @@
+contact {
+
+}
+.contact_item{
+    width: 100% ;
+    position: relative;
+    height: 1.388889rem;
+}
+.contactInput ,
+.contactFake{
+    position: absolute;
+    width: 100% ; 
+    height: 100% ;
+    top:0px;
+    left:0px; 
+}
+.contactFake{
+    z-index: 99;
+}

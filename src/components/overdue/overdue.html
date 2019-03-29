@@ -1,0 +1,58 @@
+
+<div class="audit_infoWrap">
+    <div class="audit_wrap" style="padding-top: .833333rem">
+        <div class="audit_text" style="padding: 0px">
+          <span>
+              {{ "overDue.head" | translate }}
+          </span>
+            <span class="c-text-blue" *ngIf="orderInfo">
+              {{ orderInfo.loanEndDays | AbsPipe }}
+          </span>
+            <span>
+              {{ "overDue.foot" | translate }}
+          </span>
+        </div>
+
+        <div class="audit_text c-flex-column-center" style="padding: 0px 20px ;margin-top: .513889rem">
+            <!--<span class="repay_text">-->
+            <!--{{ "repay.first" | translate }}-->
+            <!--</span>-->
+            <!--<span class="repay_text">-->
+            <!--{{ "repay.sec" | translate }}-->
+            <!--</span>-->
+
+            <span class="repay_text">
+            <span>
+                {{ "overDue.third_head" | translate }}
+            </span>
+            <span>
+              60%
+            </span>
+            <span>
+                {{ "overDue.third_foot" | translate }}
+            </span>            
+          </span>
+            <!--<span class="repay_text">-->
+            <!--{{ "repay.fouth" | translate }}-->
+            <!--</span>   -->
+        </div>
+
+        <div class="repay_mount c-text-red">
+            <span *ngIf="orderInfo">
+                {{ orderInfo.currentRepay | MoneyFormatPipe }}
+            </span>
+        </div>
+
+        <div class="audit_text c-flex-column-center" style="margin-top: .263889rem">
+            {{ "repay.unit" | translate }}
+        </div>
+
+        <div class="refuse_footer c-color-red" (click) = 'goToDetail()'>
+            {{ "repay.order" | translate}}
+        </div>
+
+    </div>
+    <footer-service>
+
+    </footer-service>
+</div>

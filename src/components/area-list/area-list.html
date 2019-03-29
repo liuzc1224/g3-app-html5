@@ -1,0 +1,16 @@
+<ion-header>
+    <div class="c-header">
+        <i class="c-back-arrow" (click) = 'back()'></i>
+        {{ "areaNameSelect" | translate }}
+    </div>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ul class="list_wrap">
+            <li *ngFor = 'let item of list' (click) = 'select(item)'>
+                {{ item.name }}
+            </li>
+        </ul>
+    </div>
+</ion-content>

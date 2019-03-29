@@ -1,0 +1,28 @@
+expan-box {}
+
+.expan-wrap {
+  font-size: .361111rem;
+  background: #fff;
+  border-radius:.138889rem ;
+  margin: .277778rem ;
+  .title-txt{
+    color: #00b4ef;
+    padding: .416667rem .333333rem;
+  }
+  .expan-inner {
+    max-height:0;
+    transition: max-height .5s;
+    color: #545454;
+    padding: 0 .319444rem;
+    p{
+      line-height: .611111rem;
+    }
+    p:last-child{
+      margin-bottom: 0.3rem;
+    }
+    &.active {
+      height: auto;
+      max-height:3rem;
+    }
+  }
+}

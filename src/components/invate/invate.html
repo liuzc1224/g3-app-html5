@@ -1,0 +1,40 @@
+<div class="invate_wrap" *ngIf="isShow">
+    <h4>Insira código do convite</h4>
+    <div class="setPass_inputWrap" style="margin-top: .666667rem;">
+        <input type="text" id="setPass" (input) = 'passInput($event)' [(ngModel)] = 'postCode' maxlength="6" >
+
+        <div class="c-flex-row-center setPass_textWrap" style="padding: 0 .722222rem;">
+            <span class="setPass_text setPass_gap" [ngClass] = "{'active' :  postCodeArr[0]}">
+                {{ postCodeArr[0] }}
+            </span>
+    
+            <span class="setPass_text setPass_gap" [ngClass] = "{'active' :  postCodeArr[1]}" >
+                {{ postCodeArr[1] }}
+            </span>
+    
+            <span class="setPass_text setPass_gap" [ngClass] = "{'active' :  postCodeArr[2]}">
+                {{ postCodeArr[2] }}
+            </span>
+
+            <span class="setPass_text setPass_gap" [ngClass] = "{'active' :  postCodeArr[3]}">
+                {{ postCodeArr[3] }}
+            </span>
+    
+            <span class="setPass_text setPass_gap" [ngClass] = "{'active' :  postCodeArr[4]}">
+                {{ postCodeArr[4] }}
+            </span>
+    
+            <span class="setPass_text" [ngClass] = "{'active' :  postCodeArr[5]}">
+                {{ postCodeArr[5] }}
+            </span>
+        </div>
+    </div>
+    <div class="invat_btn_group">
+        <p class="next_btn" (click)='nextBtn()'>Finalizar</p>
+        <p class="break_btn" (click)='breakBtn()'>Pular</p>
+    </div>
+</div>
+
+<div class="invate_mask" *ngIf="isShow">
+    
+</div>

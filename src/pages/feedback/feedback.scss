@@ -1,0 +1,98 @@
+page-invate {
+
+}
+.prompt{
+  height: .833333rem;
+  width: 100%;
+  background: #FFEBD3;
+  color: #AAAAAA;
+  font-size: .347222rem;
+  line-height: .833333rem;
+  text-align: center;
+  i{
+    font-size: .347222rem;
+    color: #AAAAAA;
+  }
+}
+.lable1{
+  background: white;
+  color: #333333;
+  font-size: .416667rem;
+  padding-left: .513889rem;
+  height: 1.2916667rem;
+  line-height: 1.2916667rem;
+  border-bottom:0.0138889rem solid #E5E5E4;
+}
+.lable2{
+  background: white;
+  margin-top: 0.1388889rem;
+  color: #333333;
+  font-size: .416667rem;
+  padding-top: 0.486111rem;
+  padding-bottom: 0.486111rem;
+  padding-left: .513889rem;
+  line-height: .55555556rem;
+  border-bottom:0.0138889rem solid #E5E5E4;
+}
+ion-textarea{
+  font-size: 0.388889rem;
+  width: 100%;
+  padding-left: .513889rem;
+  padding-top: 0.444444rem;
+  background: white;
+  resize:none;
+  height: 4.1666667rem;
+  border: none;
+}
+button{
+  width: 94%;
+  margin-top: 1.9583333rem;
+  margin-left: 3%;
+  background-color: #00B4EF;
+  color: white;
+  font-size: 0.5rem;
+  line-height: 1.3888889rem;
+  border-radius: 0.138888889rem;
+}
+:host ::ng-deep i {
+  font-size: 32px;
+  color: #999;
+}
+:host ::ng-deep .ant-upload-text {
+  margin-top: 8px;
+  color: #666;
+}
+.center{
+  float: left;
+  max-height: 3.444444rem;
+  max-width: 4.1944444rem;
+  padding: .6388889rem .5rem .6388889rem .5rem;
+  .img{
+    img{
+      width: 3.19444444rem;
+      height: 2.083333rem;
+      object-fit: cover;
+    }
+    ion-icon{
+      position: absolute;
+      float: right;
+      margin-top: -.516667rem;
+      margin-left: -.416667rem;
+      font-size: .666666rem;
+      color: #999;
+    }
+  }
+}
+.add{
+  position: relative;
+  color: #CCCCCC;
+  width: 3.19444444rem;
+  height: 2.083333rem;
+  font-size: 0.3611111rem;
+  line-height: 0.55555556rem;
+  border: 0.0138889rem solid #E5E5E4;
+  text-align: center;
+  ion-icon{
+    padding-top: 0.666666rem;
+  }
+}

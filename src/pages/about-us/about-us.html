@@ -1,0 +1,23 @@
+<common-header [centerTxt]=' "about.title" | translate '></common-header>
+
+<ion-content style="background: rgb(245 , 245 ,245)">
+
+  <div class="about_us_section" *ngFor = 'let item of proList'>
+      <div style="margin-bottom:.416667rem;text-align: center;font-size: .4rem;">
+        {{ item.title }}
+      </div>
+
+      <div style="margin : .15rem 0">
+            <div style="padding: 0 .375rem" *ngFor = 'let items of item.contents'>
+                {{ items }}
+            </div>
+      </div>
+
+    <div style="margin : .15rem 0">
+        <div style="padding: 0 .375rem" *ngFor = 'let items of item.subContenes'>
+            {{ items }}
+        </div>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,106 @@
+number-pad {
+
+}
+.pad-mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.6);
+    z-index: 1000;
+}
+.pad-content{
+    width: 100% ;
+    position: fixed;
+    bottom:  0px;
+    left:0px;
+    background :#fff;
+    padding: .597222rem 0 0 0 ;
+    z-index: 1000;
+}
+.pad-header{
+    padding : 0 .347222rem ;
+    font-size: .444444rem ;
+    color: #545454 ;
+    font-weight: bolder ;
+}
+.closeIco{
+    position: absolute;
+    right: .305556rem ;
+    top: .219444rem ;
+    font-size:1rem ;
+    color:rgb(172 , 172 , 172) ;
+}
+.pad-passwordWap{
+    width: 100% ;
+    box-sizing: border-box ;
+    padding: 0px .361111rem ;
+    margin-top: .791667rem ;
+}
+.pad-passwordWap > ul{
+    list-style: none ;
+}
+.pad-passwordWap > ul > li{
+    border-top: solid 1px #d3d3d3;
+    border-bottom: solid 1px #d3d3d3;
+    width: 1.520833rem ;
+    height: 1.520833rem ;
+    text-align: center ;
+    line-height: 1.520833rem ;
+}
+.circle{
+    width: .333333rem;
+    height: .333333rem;
+    background-color: #545454;
+    display: block;
+    border-radius: 50%;
+}
+.forget{
+    margin-top: .625rem ;
+    padding: 0px .361111rem ;
+    font-size: .361111rem ;
+    color: #00b4ef ;
+    text-align: right
+}
+.numberList{
+    list-style: none ;
+    background: rgb(245 , 245 ,245);
+    margin-top: .611111rem ;
+    border-top: solid 1px #d3d3d3;
+}
+.numberList> li{
+    width: 100% ;
+    height: 1.666667rem ;
+}
+.numberList> li > button{
+    display: block ;
+    width: 3.333333rem ;
+    height: 100% ;
+    font-size: .444444rem ;
+    text-align: center ;
+    line-height: 1.666667rem !important;
+    background: rgb(245 , 245 ,245) !important;
+    border: none !important ;
+    border-radius: 0px !important ;
+    margin: 0px !important ;
+    color: #000 !important;
+}
+.bottomSection{
+    background: rgb(224, 224, 224)
+}
+.backBtn{
+    font-size: 1rem;
+}
+.borderLeft{
+    border-left: solid 1px #d3d3d3 !important;
+}
+.borderRight{
+    border-right: solid 1px #d3d3d3 !important;
+}
+.borderTop{
+    border-top: solid 1px #d3d3d3 !important;
+}
+.borderBottom{
+    border-bottom: solid 1px #d3d3d3 !important;
+}

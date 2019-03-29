@@ -1,0 +1,220 @@
+<common-header [centerTxt]="'orderDetail.title' | translate"></common-header>
+
+<ion-content style="background:rgb(245, 245, 245)">
+  <div class="spinner_tip" *ngIf="!resMark"></div>
+
+  <div *ngIf="resMark">
+    <div class="orderDetail_wrap">
+      <!-- 订单编号 -->
+      <div class="orderDetail_section">
+        <div>{{ "orderDetail.order" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ orderInfo.orderNo }}
+        </div>
+      </div>
+
+      <!-- 订单状态 -->
+      <div class="orderDetail_section" *ngIf="orderInfo && orderInfo.orderType != 1">
+        <div>{{ "orderDetail.status" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ orderInfo.status | OrderStatusPipe }}
+        </div>
+      </div>
+
+      <!-- 借款金额 -->
+      <div class="orderDetail_section">
+        <div>{{ "orderDetail.amount" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          R$
+          {{
+            orderInfo.auditMoney ? orderInfo.auditMoney : orderInfo.applyMoney
+          }},00
+        </div>
+      </div>
+
+      <!-- 借款期限 -->
+      <div class="orderDetail_section">
+        <div>{{ "orderDetail.limit" | translate }} :</div>
+        <div
+          class="color:rgba(51,51,51,1);"
+          *ngIf="orderInfo && orderInfo.orderType != 1"
+        >
+          {{ orderInfo.loanDays }} dias
+        </div>
+        <div
+          class="color:rgba(51,51,51,1);"
+          *ngIf="orderInfo && orderInfo.orderType == 1"
+        >
+          {{ orderInfo.loanDays }} mês
+        </div>
+      </div>
+
+      <!-- 借款日期 -->
+      <div class="orderDetail_section" *ngIf="orderInfo && orderInfo.orderType != 1">
+        <div>{{ "orderDetail.loanDate" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ orderInfo.stringBorrowTime }}
+        </div>
+      </div>
+
+      <!-- 还款日期 -->
+      <div
+        class="orderDetail_section"
+        *ngIf="orderInfo && orderInfo.orderType != 1"
+      >
+        <div>{{ "orderDetail.repayDate" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ orderInfo.stringRepayTime }}
+        </div>
+      </div>
+
+      <!-- 日利率 -->
+      <div class="orderDetail_section">
+        <div *ngIf="orderInfo && orderInfo.orderType != 1">
+          {{ "orderDetail.rate" | translate }} :
+        </div>
+        <div *ngIf="orderInfo && orderInfo.orderType == 1">
+          Taxa de juros ao mês :
+        </div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ (orderInfo.lendRate * 100).toFixed(2) }}%
+        </div>
+      </div>
+
+      <!-- 分期还款： 每月审核服务费 -->
+      <div
+        class="orderDetail_section"
+        *ngIf="orderInfo && orderInfo.orderType == 1"
+      >
+        <div>Tarifa de avaliação ao mês :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{(orderInfo.monthAuditCharge * 100).toFixed(2) || 0 }}%
+        </div>
+      </div>
+
+      <!-- 分期还款： 每月技术服务费 -->
+      <div
+        class="orderDetail_section"
+        *ngIf="orderInfo && orderInfo.orderType == 1"
+      >
+        <div>Tarifa de serviço técnico ao mês :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          {{ (orderInfo.monthTechnologyCharge * 100).toFixed(2) || 0 }}%
+        </div>
+      </div>
+
+      <!-- 利息 -->
+      <div class="orderDetail_section" *ngIf="orderInfo && orderInfo.orderType != 1">
+        <div>{{ "orderDetail.moneyRate" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          R${{ (orderInfo.lendRateMoney || 0).toFixed(2) | MoneyFormatPipe }}
+        </div>
+      </div>
+
+      <!-- 联邦税 -->
+      <div class="orderDetail_section">
+        <div>{{ "orderDetail.iof" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          R$
+          {{
+            (orderInfo.vlrIOF ? orderInfo.vlrIOF : 0).toFixed(2)
+              | MoneyFormatPipe
+          }}
+        </div>
+      </div>
+
+      <!-- 还款方式 ： 每月等额还款 -->
+      <div class="orderDetail_section">
+        <div>Forma de pagamento :</div>
+        <div
+          class="color:rgba(51,51,51,1);"
+          *ngIf="orderInfo && orderInfo.orderType == 1"
+        >
+          Valor equivalente ao mês
+        </div>
+        <div
+          class="color:rgba(51,51,51,1);"
+          *ngIf="orderInfo && orderInfo.orderType != 1"
+        >
+          Pagamento de uma vez
+        </div>
+      </div>
+
+      <!-- 滞纳金 -->
+      <div class="orderDetail_section" *ngIf="orderInfo && orderInfo.orderType != 1">
+        <div>{{ "orderDetail.IVA" | translate }} :</div>
+        <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+          R$
+          {{
+            (orderInfo.overDueRateMoney
+              ? orderInfo.overDueRateMoney
+              : 0
+            ).toFixed(2) | MoneyFormatPipe
+          }}
+        </div>
+      </div>
+
+      <!-- 优惠券 -->
+      <!-- <div class="orderDetail_section">
+                <div>
+                    {{ "orderDetail.award" | translate }} :
+                </div>
+                <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+                    R${{ orderInfo.couponAmount}},00
+                </div>
+            </div> -->
+
+      <div class="orderDetail_payInfo">
+        <!-- 应还 -->
+        <div class="orderDetail_section">
+          <div>{{ "orderDetail.sholudPay" | translate }} :</div>
+          <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+            R$ {{ (orderInfo.currentRepay || 0).toFixed(2) | MoneyFormatPipe }}
+          </div>
+        </div>
+
+        <!-- 已还 -->
+        <div class="orderDetail_section" *ngIf="orderInfo && orderInfo.orderType != 1">
+          <div>{{ "orderDetail.realPay" | translate }} :</div>
+          <div class="color:rgba(51,51,51,1);" *ngIf="orderInfo">
+            R$
+            {{
+              (orderInfo.realRepayMoney
+                ? orderInfo.realRepayMoney.toFixed(2)
+                : "Agora sem os dados") | MoneyFormatPipe
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="text-plain">
+            O valor a ser pago apresentado não inclui o IOF, o pagamento do IOF está sujeito ao acordo de empréstimo.
+        </div> -->
+
+    <div
+      class="c-flex-row-center"
+      *ngIf="orderInfo && orderInfo['status'] == 4 && orderInfo.orderType != 1"
+    >
+      <button class="c-color-blue home_button" (click)="transToQr($event)">
+        {{ "orderDetail.lookQr" | translate }}
+      </button>
+    </div>
+
+    <div class="audit_footer" style="margin-top: 20px" *ngIf="orderInfo && orderInfo.orderType != 1">
+      <img
+        src="../../assets/imgs/side/service.png"
+        alt=""
+        class="audit_icon_footer"
+      />
+      <div class="audit_textWrap c-flex-column-center">
+        <span style="margin-bottom: 5px;">
+          {{ "audit.notYou" | translate }}
+        </span>
+        <span class="c-text-blue" (click)="transSevice()">
+          {{ "audit.contact" | translate }}
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>

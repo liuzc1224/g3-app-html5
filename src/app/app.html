@@ -1,0 +1,97 @@
+<!-- <ion-menu [content]="content">
+    <ion-content>
+        <div class="side_head c-flex-row-start" (click) = 'checkLogin()'>
+            <img [src]="headImg" class="side_avatar">
+            <div class="side_info">
+                <div *ngIf ='loginInfo'>
+                    <div class="side_top c-text-blue" >
+                        {{ loginInfo.phoneNumber }}
+                    </div>
+                    <div class="side_bottom">
+                        {{ loginInfo.email }}
+                    </div>
+                </div>
+
+                <div class="notLogin" *ngIf ='!loginInfo'>
+                    {{ "side.menu.notLogin" | translate }}
+                </div>
+            </div>
+        </div>
+
+        <div class="side_list_block">
+            <div class="side_list" (click) = 'selectMenu(1)' >
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 1 }'>
+                    <img src="./assets/imgs/side/history.png" alt="">
+                    <div>
+                        {{ "side.menu.history" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(2)'>
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 2 }'>
+                    <img src="./assets/imgs/side/award.png" alt="">
+                    <div>
+                        {{ "side.menu.award" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(3)'>
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 3 }'>
+                    <img src="./assets/imgs/side/service.png" alt="">
+                    <div>
+                        {{ "side.menu.service" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(4)'>
+                <div class="side_section c-flex-row-start"  [ngClass]='{"side_strong" : activeMenu == 4 }'>
+                    <img src="./assets/imgs/side/invite.png" alt="">
+                    <div>
+                        {{ "side.menu.invite" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(5)'>
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 5 }'>
+                    <img src="./assets/imgs/side/aboutUs.png" alt="">
+                    <div>
+                        {{ "side.menu.aboutUs" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(6)'>
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 6 }'>
+                    <img src="./assets/imgs/side/aboutRepay.png" alt="">
+                    <div>
+                        {{ "side.menu.aboutRepay" | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="side_list" (click) = 'selectMenu(7)'>
+                <div class="side_section c-flex-row-start" [ngClass]='{"side_strong" : activeMenu == 7 }'>
+                    <img src="./assets/imgs/side/config.png" alt="">
+                    <div>
+                        {{ "side.menu.config" | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side_list" style="margin-top: .277778rem"  (click) = 'selectMenu(8)'>
+            <div class="side_section c-flex-row-start">
+                <img src="./assets/imgs/side/logout.png" alt="">
+                <div>
+                    {{ "side.menu.logout" | translate }}
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-menu> -->
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,1 @@
+export BUILD=onlinetest && ionic build --prod --minifyjs --minifycss --optimizejs

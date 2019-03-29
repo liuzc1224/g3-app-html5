@@ -1,0 +1,54 @@
+<common-header [centerTxt]='"Selecione cupom"'></common-header>
+
+<ion-content class="has-header-view" style="background:#ededed">
+  <div class="chooseRewardWrap">
+    <div (click)="choose(null)" [ngClass]="{'noChoose': true, 'active': chooseId === null}">
+      Agora não usa cupom<span class="chooseDot"></span>
+    </div>
+    <div *ngFor="let item of rewardList">
+
+      <li *ngIf="item['couponType'] === 1" (click)="choose(item['id'], item)" [ngClass]="{'rewardItem': true, 'active': item['id'] === chooseId}">
+        <p class="item-l">
+          <span *ngIf="item['conditions'] > 0">{{item.value}}<i>{{dw[item['couponType']]}}</i></span>
+          <span *ngIf="item['conditions'] === 0" style="font-size: .566667rem;margin-bottom: .416667rem;">Descuento de
+            {{item.value}}{{dw[item['couponType']]}}</span>
+          <span *ngIf="item['conditions'] > 0">El préstamo actual cumple {{item['conditions']}} peso,el interés reduce
+            {{item['value']}} pesos </span>
+          <span *ngIf="item['conditions'] === 0">Sin umbral,<br>posee descuento de interés</span>
+          <span>plazo válido hasta {{ item['endDate'] && item['endDate'].replace(regx,'/') }}</span>
+        </p>
+        <p class="item-r">
+          <span class="chooseDot"></span>
+        </p>
+      </li>
+
+      <li [ngClass]="{'rewardItem': true, 'active': item['id'] === chooseId}" *ngIf="item['couponType'] === 2" (click)="choose(item['id'], item)">
+        <p class="item-l">
+          <span>{{item.value}}<i>%</i></span>
+          <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+          <span>plazo válido hasta {{ item['endDate'] && item['endDate'].replace(regx,'/') }}</span>
+        </p>
+        <p class="item-r">
+            <span class="chooseDot"></span>
+        </p>
+      </li>
+
+      <li [ngClass]="{'rewardItem': true, 'active': item['id'] === chooseId}" *ngIf="item['couponType'] === 3" (click)="choose(item['id'], item)">
+        <p class="item-l">
+          <span>{{item.value}}<i>Días</i></span>
+          <span >{{item.conditionsToString}}<br>{{item.valueToString}}</span>
+          <span>plazo válido hasta {{ item['endDate'] && item['endDate'].replace(regx,'/') }}</span>
+        </p>
+        <p class="item-r">
+            <span class="chooseDot"></span>
+        </p>
+      </li>
+    </div>
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf=" totalPage >= 2 ">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>
+
